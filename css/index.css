@@ -1,0 +1,47 @@
+:root {
+  --bg-dark: white;
+  --button: #30b27c;
+}
+
+:root[data-theme="theme-dark"]{
+  --bg-dark: #1b1b1b;
+  --text-dark: white;
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-dark);
+  margin: 0;
+}
+
+
+#aside {
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, p, a {
+  color: var(--text-dark);
+}
+
+
+#content {
+  display: flex;
+  flex-direction: column;
+  border: green solid;
+  max-width: 50%;
+  padding: .9rem;
+}
+
+button {
+  background: var(--button);
+}
+
+video {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+}
