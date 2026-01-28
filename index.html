@@ -1,23 +1,56 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UniJAC - Comunidad</title>
 </head>
 <body>
-  <video src="./assets//videos/bgindex.mp4" autoplay muted></video>
   <header>
-    <img src="./assets/img//logo.svg" alt="logo">
-    <nav>
-      <ul>
-        <li><a href="">Inicio</a></li>
-      </ul>
+    <nav aria-label="Principal">
+      <a href="#" aria-label="Inicio UniJAC">
+        <img src="assets/img/logo.svg" alt="Logo de UniJAC">
+      </a> 
     </nav>
   </header>
-  <button>
-    hola
-  </button>
+
+  <main>
+    <!-- Sección hero con video -->
+    <section aria-labelledby="titulo-hero">
+      <figure>
+        <video 
+          src="assets/fondo.mp4" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          aria-describedby="descripcion-video"
+        ></video>
+        <figcaption id="descripcion-video" class="visually-hidden">
+          Video de la ciudad de Bogotá
+        </figcaption>
+      </figure>
+      <h1 id="titulo-hero">Todo lo que pasa en tu comunidad en un solo lugar.</h1>
+    </section>
+
+    <!-- Sección secundaria -->
+    <section aria-labelledby="titulo-comunidad">
+      <div>
+        <h2 id="titulo-comunidad">Conecta. Comparte. Ayúdate.</h2>
+        <p>
+          Mantente enterado de la información de tus vecinos y construye una comunidad entre todos.
+        </p>
+      </div>
+
+      <figure>
+        <img src="#" alt="Personas utilizando un teléfono móvil en un entorno urbano">
+        <figcaption class="visually-hidden">Vecinos interactuando con un dispositivo móvil</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UniJAC. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
