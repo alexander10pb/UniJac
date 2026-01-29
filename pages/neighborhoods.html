@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>UniJAC | Tu comunidad en un solo lugar</title>
+
+  <meta name="description" content="Descubre eventos, novedades y participa activamente en tu comunidad con UniJAC." />
+
+  <!-- Modo Black -->
+  <!-- <meta name="color-scheme" content="light dark" /> -->
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header>
+      <nav aria-label="Navegación principal">
+          <ul>
+              <li><strong>UniJAC</strong></li>
+              <li><a href="#">Eventos y actividades</a></li>
+              <li><a href="#">Daños de infraestructura</a></li>
+              <li><a href="#">Seguridad y convivencia</a></li>
+              <li><a href="#">Desorientación y objetos</a></li>
+              <li><a href="#">Aseo, basuras y puntos críticos</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal">
+    <h1>Página principal <span aria-hidden="true">›</span> Barrio</h1>
+
+    <div class="grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <section aria-labelledby="resumen-reportes">
+        <h2 id="resumen-reportes">Resumen de reportes</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Total reportes del sector</h3>
+            <p class="badge">30</p>
+          </article>
+
+          <article class="card">
+            <h3>Eventos y actividades comunitarias</h3>
+            <p class="badge">4</p>
+          </article>
+
+          <article class="card">
+            <h3>Daños de infraestructura del sector</h3>
+            <p class="badge">6</p>
+          </article>
+
+          <article class="card">
+            <h3>Comunidad y objetos perdidos / desorientados</h3>
+            <p class="badge">2</p>
+          </article>
+
+          <article class="card">
+            <h3>Seguridad y convivencia ciudadana</h3>
+            <p class="badge">7</p>
+          </article>
+
+          <article class="card">
+            <h3>Basuras, aseo y puntos críticos del barrio</h3>
+            <p class="badge">11</p>
+          </article>
+        </div>
+
+        <!-- REPORTES -->
+        <section aria-labelledby="reportes-comunidad">
+          <header>
+            <h2 id="reportes-comunidad">Reportes de la comunidad</h2>
+
+            <form aria-label="Filtros de reportes">
+              <label for="filtro">Filtrar:</label>
+              <select id="filtro" name="filtro">
+                <option value="30">Últimos 30 días</option>
+                <option value="60">Últimos 60 días</option>
+              </select>
+            </form>
+          </header>
+
+          <article class="card">
+            <h3>Poste de luz no está funcionando</h3>
+            <p>
+              <strong>Categoría:</strong> Daños de infraestructura del sector<br />
+              <strong>Reportado por:</strong> Vecino anónimo
+            </p>
+
+            <p>
+              Buenas tardes vecinos, el poste de la manzana X no está alumbrando.
+              Así que por favor tengan cuidado al pasar por este lugar.
+            </p>
+
+            <p>
+              <time datetime="2026-01-31">31 de enero de 2026</time>
+            </p>
+              <a href="#" aria-label="Ver detalles del reporte de poste de luz">Ver reporte</a>
+          </article>
+        </section>
+      </section>
+
+      <!-- COLUMNA LATERAL -->
+      <aside aria-label="Información complementaria">
+
+        <section aria-labelledby="horarios">
+          <h2 id="horarios">Horarios importantes</h2>
+          <p><strong>Recolección de basura</strong></p>
+          <ul>
+            <li>Lunes</li>
+            <li>Miércoles</li>
+            <li>Jueves</li>
+          </ul>
+          <p>Hora aproximada: 8:00 – 9:00 PM</p>
+          <a href="#">Ver más</a>
+        </section>
+
+        <section aria-labelledby="eventos">
+          <h2 id="eventos">Eventos y actividades disponibles</h2>
+
+          <article class="card">
+            <h3>Rumba terapia</h3>
+            <p>Alcaldía del barrio</p>
+            <p>
+              <time datetime="2026-03-14T07:00">14/03/2026 – 7:00 AM</time>
+            </p>
+          </article>
+
+          <a href="#">Ver más</a>
+        </section>
+
+        <section aria-labelledby="noticias">
+            <h2 id="noticias">Noticias y novedades del sector</h2>
+            <p>No hay novedades recientes.</p>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <strong>UniJAC</strong>
+        <p>
+          Plataforma digital para fortalecer la comunicación y participación comunitaria.
+        </p>
+
+        <ul aria-label="Redes sociales">
+          <li><a href="#" aria-label="Instagram UniJAC">Instagram</a></li>
+          <li><a href="#" aria-label="LinkedIn UniJAC">LinkedIn</a></li>
+          <li><a href="#" aria-label="X UniJAC">X</a></li>
+        </ul>
+      </div>
+
+      <nav aria-label="Enlaces del sitio">
+        <ul>
+          <li><strong>Features</strong></li>
+          <li><a href="#">Core features</a></li>
+          <li><a href="#">Pro experience</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Learn more</strong></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case studies</a></li>
+          <li><a href="#">Customer stories</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Support</strong></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+</body>
+</html>
