@@ -1,56 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UniJAC - Comunidad</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>UniJAC | Tu comunidad en un solo lugar</title>
+
+  <meta name="description" content="Descubre eventos, novedades y participa activamente en tu comunidad con UniJAC." />
+
+  <!-- Modo Black -->
+  <!-- <meta name="color-scheme" content="light dark" /> -->
 </head>
 <body>
-  <header>
-    <nav aria-label="Principal">
-      <a href="#" aria-label="Inicio UniJAC">
-        <img src="assets/img/logo.svg" alt="Logo de UniJAC">
-      </a> 
+
+  <!-- Skip link para accesibilidad -->
+  <a href="#contenido-principal" class="skip-link">
+    Saltar al contenido principal
+  </a>
+
+  <!-- ================= HEADER ================= -->
+  <header role="banner">
+    <nav aria-label="Navegación principal">
+      <div class="nav-container">
+        <a href="/" aria-label="Inicio UniJAC">
+          <img src="assets/img/logo-dark.svg" alt="UniJAC" />
+        </a>
+
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="#barrios">Barrios</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <!-- Sección hero con video -->
-    <section aria-labelledby="titulo-hero">
-      <figure>
-        <video 
-          src="assets/fondo.mp4" 
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          aria-describedby="descripcion-video"
-        ></video>
-        <figcaption id="descripcion-video" class="visually-hidden">
-          Video de la ciudad de Bogotá
-        </figcaption>
-      </figure>
-      <h1 id="titulo-hero">Todo lo que pasa en tu comunidad en un solo lugar.</h1>
-    </section>
+  <!-- ================= MAIN ================= -->
+  <main id="contenido-principal">
 
-    <!-- Sección secundaria -->
-    <section aria-labelledby="titulo-comunidad">
-      <div>
-        <h2 id="titulo-comunidad">Conecta. Comparte. Ayúdate.</h2>
-        <p>
-          Mantente enterado de la información de tus vecinos y construye una comunidad entre todos.
-        </p>
+    <!-- ========== HERO / BUSCADOR ========== -->
+    <section id="inicio" aria-labelledby="titulo-hero">
+      <div class="hero-content">
+
+        <h1 id="titulo-hero">
+          Descubre todo lo que pasa en tu comunidad en un solo lugar.
+        </h1>
+
+        <form role="search" aria-label="Buscar barrio">
+          <label for="buscar-barrio" class="visually-hidden">
+            Buscar barrio
+          </label>
+
+          <input
+            type="search"
+            id="buscar-barrio"
+            name="barrio"
+            placeholder="Encuentra tu barrio"
+            aria-required="true"
+          />
+
+          <button type="submit">
+            Buscar
+          </button>
+        </form>
+
       </div>
-
-      <figure>
-        <img src="#" alt="Personas utilizando un teléfono móvil en un entorno urbano">
-        <figcaption class="visually-hidden">Vecinos interactuando con un dispositivo móvil</figcaption>
-      </figure>
     </section>
+
+    <!-- ========== SECCIÓN: CONECTA, COMPARTE, AYÚDATE ========== -->
+    <section aria-labelledby="titulo-conecta">
+      <div class="section-content">
+
+        <div class="text-content">
+          <h2 id="titulo-conecta">
+            Conecta, Comparte. Ayúdate
+          </h2>
+
+          <p>
+            Mantente enterado de la información de tus vecinos y construye
+            una comunidad entre todos.
+          </p>
+        </div>
+
+        <figure>
+          <img
+            src="assets/img/persona-usando-celular.avif"
+            alt="Persona mayor usando su celular para informarse"
+          />
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ========== SECCIÓN: PARTICIPACIÓN COMUNITARIA ========== -->
+    <section aria-labelledby="titulo-participacion">
+      <div class="section-content">
+
+        <figure>
+          <img
+            src="assets/img/planta-comunidad.avif"
+            alt="Manos sosteniendo una planta como símbolo de crecimiento comunitario"
+          />
+        </figure>
+
+        <div class="text-content">
+          <h2 id="titulo-participacion">
+            Se acabaron las excusas para no participar en tu barrio.
+          </h2>
+
+          <p>
+            Invita a tus vecinos a descubrir todos los eventos disponibles
+            que la comunidad no conoce.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SECCIÓN: REPORTES COMUNITARIOS ========== -->
+    <section aria-labelledby="titulo-reportes">
+      <div class="section-content">
+
+        <div class="text-content">
+          <h2 id="titulo-reportes">
+            Ellos también necesitan a la comunidad.
+          </h2>
+
+          <p>
+            Ayuda reportando cualquier tipo de novedad que encuentres en tu zona,
+            tus vecinos te lo agradecerán.
+          </p>
+        </div>
+
+        <figure>
+          <img
+            src="assets/img/perro-comunidad.png"
+            alt="Perro sosteniendo un plato, símbolo de ayuda comunitaria"
+          />
+          <img
+            src="assets/img/ave-comunidad.png"
+            alt="Ave comunitaria"
+          />
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ========== SECCIÓN: ADMINISTRACIÓN COMUNITARIA ========== -->
+    <section aria-labelledby="titulo-administracion">
+      <div class="section-content">
+
+        <h2 id="titulo-administracion">
+          Administra la sostenibilidad de la comunidad.
+        </h2>
+
+        <p>
+          Ser parte de la JAC es ser la voz de la gente y la unión que busca
+          el fortalecimiento y la dignidad del pueblo.
+        </p>
+
+        <figure>
+          <img
+            src="personas-comunidad.jpg"
+            alt="Grupo diverso de personas abrazadas representando unión comunitaria"
+          />
+        </figure>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 UniJAC. Todos los derechos reservados.</p>
+  <!-- ================= FOOTER ================= -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <strong>UniJAC</strong>
+        <p>
+          Plataforma digital para fortalecer la comunicación y participación comunitaria.
+        </p>
+
+        <ul aria-label="Redes sociales">
+          <li><a href="#" aria-label="Instagram UniJAC">Instagram</a></li>
+          <li><a href="#" aria-label="LinkedIn UniJAC">LinkedIn</a></li>
+          <li><a href="#" aria-label="X UniJAC">X</a></li>
+        </ul>
+      </div>
+
+      <nav aria-label="Enlaces del sitio">
+        <ul>
+          <li><strong>Features</strong></li>
+          <li><a href="#">Core features</a></li>
+          <li><a href="#">Pro experience</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Learn more</strong></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case studies</a></li>
+          <li><a href="#">Customer stories</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Support</strong></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </nav>
+
+    </div>
   </footer>
 </body>
 </html>
