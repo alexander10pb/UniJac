@@ -11,6 +11,7 @@
   <!-- Modo Black -->
   <!-- <meta name="color-scheme" content="light dark" /> -->
 </head>
+
 <body>
   <!-- ================= HEADER ================= -->
   <header>
@@ -26,88 +27,78 @@
       </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main id="contenido-principal">
+  <main>
+
+    <!-- BREADCRUMB -->
     <nav aria-label="Ruta de navegación">
       <ol class="breadcrumb">
         <li>
           <a href="../index.html">Página principal</a>
         </li>
+        <li>
+          <a href="./neighborhoods.html">Barrio</a>
+        </li>
         <li aria-current="page">
-          Barrio
+          Desorientación y objetos
         </li>
       </ol>
     </nav>
 
+    <h1>Desorientación y objetos perdidos</h1>
+
     <div class="grid">
-      <!-- COLUMNA PRINCIPAL -->
-      <section aria-labelledby="resumen-reportes">
-        <h2 id="resumen-reportes">Resumen de reportes</h2>
+
+      <!-- LISTADO DE EVENTOS -->
+      <section aria-labelledby="reportes-objetos">
+        <h2 id="reportes-objetos" class="visually-hidden">
+          Reportes de desorientación y objetos perdidos
+        </h2>
 
         <div class="cards">
-          <article class="card">
-            <h3>Total reportes del sector</h3>
-            <p class="badge">30</p>
+
+          <!-- REPORTE -->
+          <article class="card" aria-labelledby="reporte-documentos">
+            <header>
+              <div class="user">
+                <span aria-hidden="true">👤</span>
+                <strong>Juanito Pérez</strong>
+              </div>
+              <p class="muted">Integrante de la JAC</p>
+              <span class="tag">Recuperado</span>
+            </header>
+
+            <h3 id="reporte-documentos">Documentos extraviados</h3>
+
+            <p>
+              Buenas tardes vecinos, el día de ayer se encontraron estos
+              documentos en el parque principal del barrio.
+              Se dejarán en la estación más cercana de TransMilenio.
+            </p>
+
+            <p class="muted">
+              Reportado el
+              <time datetime="2025-01-12">12 de enero de 2025</time>
+            </p>
+
+            <a href="#" aria-label="Ver detalles del reporte de documentos extraviados">
+              Ver más →
+            </a>
           </article>
 
-          <article class="card">
-            <h3>Eventos y actividades comunitarias</h3>
-            <p class="badge">4</p>
+          <!-- PLACEHOLDERS -->
+          <article class="card" aria-hidden="true">
+            <p class="muted">Reporte próximamente…</p>
           </article>
 
-          <article class="card">
-            <h3>Daños de infraestructura del sector</h3>
-            <p class="badge">6</p>
+          <article class="card" aria-hidden="true">
+            <p class="muted">Reporte próximamente…</p>
           </article>
 
-          <article class="card">
-            <h3>Comunidad y objetos perdidos / desorientados</h3>
-            <p class="badge">2</p>
+          <article class="card" aria-hidden="true">
+            <p class="muted">Reporte próximamente…</p>
           </article>
 
-          <article class="card">
-            <h3>Seguridad y convivencia ciudadana</h3>
-            <p class="badge">7</p>
-          </article>
-
-          <article class="card">
-            <h3>Basuras, aseo y puntos críticos del barrio</h3>
-            <p class="badge">11</p>
-          </article>
         </div>
-
-        <!-- REPORTES -->
-        <section aria-labelledby="reportes-comunidad">
-          <header>
-            <h2 id="reportes-comunidad">Reportes de la comunidad</h2>
-
-            <form aria-label="Filtros de reportes">
-              <label for="filtro">Filtrar:</label>
-              <select id="filtro" name="filtro">
-                <option value="30">Últimos 30 días</option>
-                <option value="60">Últimos 60 días</option>
-              </select>
-            </form>
-          </header>
-
-          <article class="card">
-            <h3>Poste de luz no está funcionando</h3>
-            <p>
-              <strong>Categoría:</strong> Daños de infraestructura del sector<br />
-              <strong>Reportado por:</strong> Vecino anónimo
-            </p>
-
-            <p>
-              Buenas tardes vecinos, el poste de la manzana X no está alumbrando.
-              Así que por favor tengan cuidado al pasar por este lugar.
-            </p>
-
-            <p>
-              <time datetime="2026-01-31">31 de enero de 2026</time>
-            </p>
-              <a href="#" aria-label="Ver detalles del reporte de poste de luz">Ver reporte</a>
-          </article>
-        </section>
       </section>
 
       <!-- COLUMNA LATERAL -->
