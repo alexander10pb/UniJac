@@ -11,6 +11,7 @@
   <!-- Modo Black -->
   <!-- <meta name="color-scheme" content="light dark" /> -->
 </head>
+
 <body>
   <!-- ================= HEADER ================= -->
   <header>
@@ -26,89 +27,85 @@
       </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main id="contenido-principal">
+  <main>
+
+    <!-- BREADCRUMB -->
     <nav aria-label="Ruta de navegación">
       <ol class="breadcrumb">
         <li>
           <a href="../index.html">Página principal</a>
         </li>
+        <li>
+          <a href="./neighborhoods.html">Barrio</a>
+        </li>
         <li aria-current="page">
-          Barrio
+          Daños de infraestructura
         </li>
       </ol>
     </nav>
 
+    <h1>Daños de infraestructura</h1>
+
     <div class="grid">
-      <!-- COLUMNA PRINCIPAL -->
-      <section aria-labelledby="resumen-reportes">
-        <h2 id="resumen-reportes">Resumen de reportes</h2>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Total reportes del sector</h3>
-            <p class="badge">30</p>
-          </article>
+      <!-- TABLA DE REPORTES -->
+    <section aria-labelledby="tabla-reportes">
+      <h2 id="tabla-reportes">Casos reportados</h2>
 
-          <article class="card">
-            <h3>Eventos y actividades comunitarias</h3>
-            <p class="badge">4</p>
-          </article>
+      <div role="region" aria-labelledby="tabla-reportes" tabindex="0">
+        <table>
+          <caption class="muted">
+            Listado de casos de infraestructura y convivencia reportados por la comunidad
+          </caption>
 
-          <article class="card">
-            <h3>Daños de infraestructura del sector</h3>
-            <p class="badge">6</p>
-          </article>
+          <thead>
+            <tr>
+              <th scope="col">Evidencia</th>
+              <th scope="col">Fecha de reporte</th>
+              <th scope="col">Nombre del caso</th>
+              <th scope="col">Gravedad del caso</th>
+              <th scope="col">Estado del caso</th>
+            </tr>
+          </thead>
 
-          <article class="card">
-            <h3>Comunidad y objetos perdidos / desorientados</h3>
-            <p class="badge">2</p>
-          </article>
+          <tbody>
+            <!-- FILA CON DATOS -->
+            <tr>
+              <td>
+                <a href="#" aria-label="Ver adjunto del caso Deterioro vial">
+                  Adjunto
+                </a>
+              </td>
+              <td>
+                <time datetime="2026-01-05">Enero 5, 2026</time>
+              </td>
+              <td>
+                Deterioro vial
+              </td>
+              <td>
+                <span aria-label="Gravedad moderada">Moderado</span>
+              </td>
+              <td>
+                <span aria-label="Estado pendiente">Pendiente</span>
+              </td>
+            </tr>
 
-          <article class="card">
-            <h3>Seguridad y convivencia ciudadana</h3>
-            <p class="badge">7</p>
-          </article>
+            <!-- FILAS VACÍAS / PRÓXIMAMENTE -->
+            <tr>
+              <td colspan="5" class="muted">
+                Próximamente más reportes…
+              </td>
+            </tr>
 
-          <article class="card">
-            <h3>Basuras, aseo y puntos críticos del barrio</h3>
-            <p class="badge">11</p>
-          </article>
-        </div>
-
-        <!-- REPORTES -->
-        <section aria-labelledby="reportes-comunidad">
-          <header>
-            <h2 id="reportes-comunidad">Reportes de la comunidad</h2>
-
-            <form aria-label="Filtros de reportes">
-              <label for="filtro">Filtrar:</label>
-              <select id="filtro" name="filtro">
-                <option value="30">Últimos 30 días</option>
-                <option value="60">Últimos 60 días</option>
-              </select>
-            </form>
-          </header>
-
-          <article class="card">
-            <h3>Poste de luz no está funcionando</h3>
-            <p>
-              <strong>Categoría:</strong> Daños de infraestructura del sector<br />
-              <strong>Reportado por:</strong> Vecino anónimo
-            </p>
-
-            <p>
-              Buenas tardes vecinos, el poste de la manzana X no está alumbrando.
-              Así que por favor tengan cuidado al pasar por este lugar.
-            </p>
-
-            <p>
-              <time datetime="2026-01-31">31 de enero de 2026</time>
-            </p>
-              <a href="#" aria-label="Ver detalles del reporte de poste de luz">Ver reporte</a>
-          </article>
-        </section>
-      </section>
+            <tr>
+              <td colspan="5" class="muted">
+                —
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
       <!-- COLUMNA LATERAL -->
       <aside aria-label="Información complementaria">
