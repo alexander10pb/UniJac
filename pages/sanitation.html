@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>UniJAC | Tu comunidad en un solo lugar</title>
+
+  <meta name="description" content="Descubre eventos, novedades y participa activamente en tu comunidad con UniJAC." />
+
+  <!-- Modo Black -->
+  <!-- <meta name="color-scheme" content="light dark" /> -->
+</head>
+
+<body>
+  <!-- ================= HEADER ================= -->
+  <header>
+      <nav aria-label="Navegación principal">
+          <ul>
+              <li><strong>UniJAC</strong></li>
+              <li><a href="./eventsandactivities.html">Eventos y actividades</a></li>
+              <li><a href="./infrastructure.html">Daños de infraestructura</a></li>
+              <li><a href="#">Seguridad y convivencia</a></li>
+              <li><a href="./disorientation.html">Desorientación y objetos</a></li>
+              <li><a href="./sanitation.html">Aseo, basuras y puntos críticos</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <main>
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="Ruta de navegación">
+      <ol class="breadcrumb">
+        <li>
+          <a href="../index.html">Página principal</a>
+        </li>
+        <li>
+          <a href="./neighborhoods.html">Barrio</a>
+        </li>
+        <li aria-current="page">
+          Aseo, basuras y puntos críticos
+        </li>
+      </ol>
+    </nav>
+
+    <h1>Aseo, basuras y puntos críticos</h1>
+
+    <div class="grid">
+
+      <!-- LISTADO DE EVENTOS -->
+      <section aria-labelledby="titulo-reportes">
+
+        <h2 id="titulo-reportes" class="visually-hidden">
+          Reportes de aseo, basuras y puntos críticos
+        </h2>
+
+        <div class="reportes-layout">
+
+          <!-- LISTADO DE REPORTES -->
+          <div class="reportes-lista">
+
+            <h3>Últimos reportes</h3>
+
+            <div class="encabezado-lista">
+
+              <!-- BUSCADOR -->
+              <form role="search" aria-label="Buscar reportes">
+                <label for="buscar-reporte" class="visually-hidden">
+                  Ultimos reportes
+                </label>
+
+                <input
+                  type="search"
+                  id="buscar-reporte"
+                  name="q"
+                  placeholder="Buscar reporte"
+                  aria-describedby="ayuda-busqueda"
+                />
+
+                <span id="ayuda-busqueda" class="visually-hidden">
+                  Puedes buscar por dirección o tipo de reporte
+                </span>
+              </form>
+
+              <!-- ORDENAR -->
+              <div class="ordenar">
+                <label for="ordenar-reportes" class="visually-hidden">
+                  Ordenar por
+                </label>
+
+                <select id="ordenar-reportes" name="orden">
+                  <option value="recientes">Más recientes</option>
+                  <option value="antiguos">Más antiguos</option>
+                  <option value="zona">Zona</option>
+                  <option value="estado">Estado</option>
+                </select>
+              </div>
+
+            </div>           
+
+            <article class="reporte">
+              <h4>Calle 81A</h4>
+
+              <p class="estado estado-pendiente">
+                Sitios con malos olores y/o presencia de roedores/moscas.
+              </p>
+
+              <p class="muted">
+                <time datetime="2026-01-29T14:20">
+                  Hace 38 minutos
+                </time>
+              </p>
+
+              <span class="badge">Sin resolver</span>
+            </article>
+
+            <article class="reporte">
+              <h4>Río Salitre</h4>
+
+              <p class="estado estado-alerta">
+                Botaderos cerca de ríos, parques y zonas verdes que deterioran el entorno.
+              </p>
+
+              <p class="muted">
+                <time datetime="2026-01-29T13:40">
+                  Hace 40 minutos
+                </time>
+              </p>
+
+              <span class="badge">Sin resolver</span>
+            </article>
+
+            <article class="reporte">
+              <h4>Diagonal 82C</h4>
+
+              <p class="estado estado-critico">
+                Sitios con malos olores y/o presencia de roedores/moscas.
+              </p>
+
+              <p class="muted">
+                <time datetime="2026-01-29T12:15">
+                  Hace 1 hora
+                </time>
+              </p>
+
+              <span class="badge">Sin resolver</span>
+            </article>
+
+          </div>
+
+          <!-- MAPA -->
+          <div class="reportes-mapa">
+
+            <h3>Mapa de reportes</h3>
+
+            <figure>
+              <img
+                src="./assets/img/mapa-minuto-de-dios.png"
+                alt="Mapa del barrio Minuto de Dios con reportes de basuras y puntos críticos marcados"
+              />
+              <figcaption class="visually-hidden">
+                Ubicación geográfica de reportes ciudadanos
+              </figcaption>
+            </figure>
+
+            <ul class="leyenda">
+              <li><span class="dot-naranja"></span> Basuras domiciliarias en andenes/esquina en lugares no autorizados.</li>
+              <li><span class="dot-morado"></span> Muebles viejos, llantas, poda/cesped en espacios publicos.</li>
+              <li><span class="dot-azul"></span> Botaderos cerca de ríos, parques zonas verdes que deterioran el entorno.</li>
+              <li><span class="dot-verde"></span> Sitios con malos olores y presencia de roedores/moscas.</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- COLUMNA LATERAL -->
+      <aside aria-label="Información complementaria">
+
+        <section aria-labelledby="horarios">
+          <h2 id="horarios">Horarios importantes</h2>
+          <p><strong>Recolección de basura</strong></p>
+          <ul>
+            <li>Lunes</li>
+            <li>Miércoles</li>
+            <li>Jueves</li>
+          </ul>
+          <p>Hora aproximada: 8:00 – 9:00 PM</p>
+          <a href="#">Ver más</a>
+        </section>
+
+        <section aria-labelledby="eventos">
+          <h2 id="eventos">Eventos y actividades disponibles</h2>
+
+          <article class="card">
+            <h3>Rumba terapia</h3>
+            <p>Alcaldía del barrio</p>
+            <p>
+              <time datetime="2026-03-14T07:00">14/03/2026 – 7:00 AM</time>
+            </p>
+          </article>
+
+          <a href="#">Ver más</a>
+        </section>
+
+        <section aria-labelledby="noticias">
+            <h2 id="noticias">Noticias y novedades del sector</h2>
+            <p>No hay novedades recientes.</p>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <strong>UniJAC</strong>
+        <p>
+          Plataforma digital para fortalecer la comunicación y participación comunitaria.
+        </p>
+
+        <ul aria-label="Redes sociales">
+          <li><a href="#" aria-label="Instagram UniJAC">Instagram</a></li>
+          <li><a href="#" aria-label="LinkedIn UniJAC">LinkedIn</a></li>
+          <li><a href="#" aria-label="X UniJAC">X</a></li>
+        </ul>
+      </div>
+
+      <nav aria-label="Enlaces del sitio">
+        <ul>
+          <li><strong>Features</strong></li>
+          <li><a href="#">Core features</a></li>
+          <li><a href="#">Pro experience</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Learn more</strong></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case studies</a></li>
+          <li><a href="#">Customer stories</a></li>
+        </ul>
+
+        <ul>
+          <li><strong>Support</strong></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+</body>
+</html>
