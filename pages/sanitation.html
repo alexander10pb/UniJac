@@ -154,15 +154,18 @@
 
             <h3>Mapa de reportes</h3>
 
-            <figure>
-              <img
-                src="./assets/img/mapa-minuto-de-dios.png"
-                alt="Mapa del barrio Minuto de Dios con reportes de basuras y puntos críticos marcados"
-              />
-              <figcaption class="visually-hidden">
-                Ubicación geográfica de reportes ciudadanos
-              </figcaption>
-            </figure>
+            <div
+              id="mapa-reportes"
+              class="mapa-interactivo"
+              role="region"
+              aria-label="Mapa de reportes de aseo y basuras"
+              aria-describedby="mapa-ayuda"
+              tabindex="0">MAPA CON JAVASCRIPT
+            </div>
+
+            <p id="mapa-ayuda" class="visually-hidden">
+              Selecciona un marcador para ver el detalle del reporte.
+            </p>
 
             <ul class="leyenda">
               <li><span class="dot-naranja"></span> Basuras domiciliarias en andenes/esquina en lugares no autorizados.</li>
