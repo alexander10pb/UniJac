@@ -139,7 +139,7 @@ main {
       letter-spacing: -1px;
       line-height: 1;
       color: white;
-      font-size: clamp(2.7rem, 10vw, 4rem);
+      font-size: clamp(2.6rem, 10vw, 4rem);
     }
 
     .form-content {
@@ -164,7 +164,7 @@ main {
 
         .search-label {
           position: absolute;
-          left: 3rem;
+          left: 2rem;
           cursor: text;
           color: #777777;
           letter-spacing: -0.5px;
@@ -179,7 +179,7 @@ main {
           max-height: 4.5rem;
           border-radius: 2rem;
           padding-top: 1.1rem;
-          padding-inline: 3rem;
+          padding-inline: 2rem;
           font-size: 1.1rem;
           transition: box-shadow 0.2s ease-out;
           width: 100%;
@@ -202,12 +202,13 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: calc(100% + 5px);
         border-radius: 50%;
         border: 0;
         background-color: #30b27c;
-        padding: 1rem;
+        padding: 1.3rem;
         transition: background 0.1s linear;
+        box-shadow: -2px 0 7px #919191;
 
         &:hover {
           background: #2a9b6c;
@@ -223,7 +224,7 @@ main {
 
   .btn-conecta {
     position: absolute;
-    bottom: 4rem;
+    bottom: 2rem;
     width: 3rem;
     border-radius: 50%;
     animation-name: bounce;
@@ -314,10 +315,6 @@ main {
 @media (max-width: 991.98px) {
   .header {
     grid-template-columns: auto 1fr;
-
-    .list-container {
-      gap: 2.5rem;
-    }
 
     .nav-container {
       justify-self: end;
