@@ -1,0 +1,117 @@
+:root {
+  /* PALETA DE COLORES */
+  --text-primary: rgb(34, 34, 34);
+  --text-secondary: rgb(92, 94, 98);
+
+  --background-primary: rgb(255, 255, 255);
+  --background-secondary: rgb(250, 250, 250);
+  --background-tertiary: rgb(245, 245, 245);
+
+  --background-input: rgb(247, 247, 247);
+  --background-input-border: rgb(229, 229, 229);
+
+  --border-hover: rgb(210, 210, 210);
+  --border-focus: rgb(180, 180, 180);
+  --border-input: rgb(229, 229, 229);
+  --border-input-focus: rgb(180, 180, 180);
+  --icon: rgb(27, 27, 27);
+}
+
+[data-theme="dark"] {
+  --text-primary: rgb(237, 237, 237);
+  --text-secondary: rgb(159, 159, 159);
+  --text-tertiary: rgb(143, 143, 143);
+
+  --background-primary: rgb(0, 0, 0);
+  --background-secondary: rgba(10, 10, 10);
+  --background-tertiary: rgb(20, 20, 20);
+
+  --background-hover: rgb(31, 31, 31);
+
+  --border: rgba(255, 255, 255, 0.089);
+  --border-hover: rgb(50, 50, 50);
+  --border-focus: rgb(100, 100, 100);
+
+  --icon: rgb(167, 167, 167);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  background: var(--background-primary);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* FORMATEO DE ESTILOS */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+ul,
+ol,
+figure,
+input,
+fieldset {
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  text-decoration: none;
+  list-style: none;
+  border: 0;
+  outline: 0;
+}
+
+button {
+  border: 1px var(--border) solid;
+  padding: 0;
+  cursor: pointer;
+  background: var(--background-secondary);
+  padding: 0.5rem;
+  border-radius: 5px;
+  min-width: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+input,
+select {
+  box-shadow: 0 2px 4px #00000010;
+}
+
+svg {
+  color: var(--icon);
+}
+
+/* PARA ACCESIBILIDAD */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.logo path[fill="#010101"] {
+  fill: var(--text-primary);
+}
+
+.not-found {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
