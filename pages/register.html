@@ -1,0 +1,99 @@
+<section class="form-content">
+  <form action="" method="POST">
+    <div class="header-form">
+      <h1 class="title-step">
+        <span id="currentStep" class="step">Paso 1 de 2</span>
+        Crear una cuenta
+      </h1>
+      <button
+        id="backStep1"
+        class="back-step1"
+        type="button"
+        aria-label="Volver al paso anterior"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5.5 12.002H19m-8 6s-6-4.419-6-6s6-6 6-6"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="steps-content">
+      
+      <!-- PASO 1 -->
+      <fieldset
+        id="step1Content"
+        class="step1-content"
+        aria-label="Paso 1 de 2"
+      >
+        <div class="form-group">
+          <label for="localidad">Localidad</label>
+          <select name="localidad" id="localidad" required>
+            <option selected disabled hidden>Selecciona tu localidad</option>
+            <option value="9">Fontibón</option>
+            <option value="10">Engativá</option>
+            <option value="11">Suba</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" required />
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" name="apellido" id="apellido" required />
+        </div>
+
+        <div class="h-captcha"></div>
+
+        <p class="terms">
+          Al continuar, aceptas el uso de cookies y la política de privacidad al
+          proyecto UniJAC para crear una cuenta.
+        </p>
+
+        <button id="nextStep" class="next-step" type="button" role="button">
+          Continuar
+        </button>
+        <div class="action-login">
+          <hr />
+          <span>¿Ya tienes una cuenta?</span>
+          <a href="#/login">Iniciar sesión</a>
+          <hr />
+        </div>
+      </fieldset>
+
+      <!-- PASO 2 -->
+      <fieldset
+        id="step2Content"
+        class="step2-content"
+        aria-label="Paso 2 de 2"
+      >
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" name="correo" id="correo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+
+        <a href="./pages/neighborhoods.html" class="next-step" type="submit"
+          >Crear cuenta</a
+        >
+      </fieldset>
+    </div>
+  </form>
+</section>
