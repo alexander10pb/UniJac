@@ -10,11 +10,15 @@
   --background-input: rgb(247, 247, 247);
   --background-input-border: rgb(229, 229, 229);
 
+  --border: rgb(236, 236, 236);
   --border-hover: rgb(210, 210, 210);
   --border-focus: rgb(180, 180, 180);
   --border-input: rgb(229, 229, 229);
   --border-input-focus: rgb(180, 180, 180);
-  --icon: rgb(27, 27, 27);
+
+  --icon: rgb(102, 102, 102);
+
+  --warning: rgb(224, 163, 48) ;
 }
 
 [data-theme="dark"] {
@@ -78,7 +82,7 @@ button {
   border: 1px var(--border) solid;
   padding: 0;
   cursor: pointer;
-  background: var(--background-secondary);
+  background: var(--background-tertiary);
   padding: 0.5rem;
   border-radius: 5px;
   min-width: 3rem;
