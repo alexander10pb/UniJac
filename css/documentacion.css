@@ -1,0 +1,276 @@
+/* =========================
+   PALETA DE COLOR
+========================= */
+
+:root {
+  --background-primary: #0f172a;       /* Azul oscuro profundo */
+  --background-secondary: #1e293b;     /* Azul gris */
+  --background-tertiary: #334155;      
+  --accent: #3b82f6;                   /* Azul principal */
+  --accent-soft: #2563eb;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+
+/* =========================
+   BASE GENERAL
+========================= */
+
+body {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--text-primary);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+header nav strong {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  padding: 4rem 6rem;
+  min-height: calc(100vh - 9rem);
+}
+
+/* =========================
+   CARDS HORIZONTALES
+========================= */
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  flex: row;
+  flex:1;
+  min-width: 300px;
+}
+
+.card {
+  flex:row;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 2.5rem;
+  width: auto;
+  min-width: 30%;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  border: 1px solid var(--accent);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #0b1220;
+  padding: 4rem 6rem 2rem 6rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Contenedor principal */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+/* Marca */
+.footer-brand span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.footer-brand p {
+  margin: 1rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Redes sociales */
+.social-networks {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.social-networks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.social-networks a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.social-networks svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer nav */
+footer nav h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+footer nav ul {
+  list-style: none;
+}
+
+footer nav li {
+  margin-bottom: 0.6rem;
+}
+
+footer nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: 0.2s ease;
+}
+
+footer nav a:hover {
+  color: var(--accent);
+}
+
+/* Logos */
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.logos img {
+  height: 42px;
+  opacity: 0.9;
+}
+
+.ods {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Copyright */
+.copyr {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+  main {
+    padding: 3rem 2rem;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  header {
+    padding: 0 1.5rem;
+  }
+
+  main {
+    padding: 2rem 1.5rem;
+  }
+}
