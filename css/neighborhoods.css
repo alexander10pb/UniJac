@@ -104,7 +104,7 @@ body {
         margin-top: 1rem;
 
         button {
-          background: #3881d5;
+          background: #2270c9;
           color: #fff;
           height: 3rem;
           font-size: 1rem;
@@ -325,7 +325,7 @@ body {
               width: 8.5rem;
               height: 9rem;
 
-              h2 {
+              p {
                 display: flex;
                 font-size: 1.2rem;
                 font-weight: 400;
@@ -470,7 +470,8 @@ body {
             }
 
             .time-card {
-              color: var(--warning);
+              color: var(--text-secondary);
+              font-weight: 500;
             }
           }
 
@@ -684,7 +685,7 @@ body {
                 gap: 0.5rem;
                 background: var(--background-primary);
 
-                h2 {
+                p {
                   font-weight: 500;
                   height: auto;
                   font-size: 1.1em;
