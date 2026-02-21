@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 
     // LOADER INICIAL
     const contentLoader = document.querySelector("#contentLoader");
@@ -7,7 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
         contentLoader.style.visibility = "hidden";
     }
     // =================================================
+})
 
+window.addEventListener("DOMContentLoaded", () => {
 
     // DELEGACIONES
     document.addEventListener('click', (e) => {
