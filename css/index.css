@@ -301,8 +301,120 @@ body {
       }
     }
     /*=========== SECOND SECTION */
-    /*=========== THIRD SECTION */
+    .second-content {
+      display: flex;
+      align-items: center;
+      min-height: 50svh;
+      border-radius: 3rem;
+      background: var(--background-primary);
+      max-width: 100rem;
+      width: 100%;
+      box-shadow: inset 0 0 100px 0 #0260ad73;
+      .text-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem clamp(2rem, 5.5vw, 8rem) 0 clamp(2rem, 5.5vw, 8rem);
+        gap: 2.5rem;
+        .title {
+          color: #3d7aff;
+          font-size: clamp(6rem, 6.5vw, 7rem);
+        }
+        .subtitle {
+          color: #101010;
+          font-size: 2rem;
+        }
+      }
+      .image-content {
+        flex: 1;
+        height: 100%;
+        max-height: 50rem;
+        width: 50rem;
+        object-fit: contain;
+        overflow: hidden;
+        bottom: 0;
+        border-radius: inherit;
+      }
+    }
+    /*=========== THIRD SECTION */}
+    .third-content{
+      display: flex;
+      align-items: center;
+      min-height: 50svh;
+      border-radius: 3rem;
+      background: var(--background-primary);
+      max-width: 100rem;
+      width: 100%;
+      box-shadow: inset 0 0 100px 0 #0260ad73;
+      .text-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem clamp(2rem, 5.5vw, 8rem) 0 clamp(2rem, 5.5vw, 8rem);
+        gap: 2.5rem;
+        .title {
+          color: #3d7aff;
+          font-size: clamp(6rem, 6.5vw, 7rem);
+        }
+        .subtitle {
+          color: #101010;
+          font-size: 2rem;
+        }
+      }
+      .image-content {
+        flex: 1;
+        height: 100%;
+        max-height: 50rem;
+        width: 50rem;
+        object-fit: contain;
+        overflow: hidden;
+        bottom: 0;
+      }
+    }
     /*=========== FOURTH SECTION */
+    .fourth-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        max-width: 110rem;
+        width: 100%;
+        margin: 0 auto;
+
+        padding: 6rem 4rem 0 4rem;
+        border-radius: 3rem;
+        overflow: hidden;
+    }
+
+    /* BLOQUE DE TEXTO */
+    .fourth-content .text-content {
+        max-width: 70rem;
+        margin-bottom: 4rem;
+    }
+
+    .fourth-content h2 {
+        font-size: clamp(3.5rem, 4vw, 4.5rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    .fourth-content p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* IMAGEN */
+    .fourth-content img {
+        width: 100%;
+        height: 45rem;
+        object-fit: cover;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        }
     .scroll-btn {
       height: 3rem;
       width: 3rem;
@@ -792,6 +904,90 @@ body {
             object-fit: contain;
           }
         }
+        .second-content {
+          box-shadow: inset 0 0 15px 0 #0260ad73;
+
+          flex-direction: column;
+          text-align: center;
+          height: 100svh;
+          border-radius: 1rem;
+          max-width: 50rem;
+          .text-content {
+            justify-content: center;
+            gap: 2rem;
+            flex: 1;
+            .title {
+              font-size: clamp(3.5rem, 9vw, 13rem);
+            }
+            .subtitle {
+              font-size: clamp(1.3rem, 3.5vw, 5rem);
+            }
+          }
+          .image-content {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+          }
+        }
+        .third-content {
+          box-shadow: inset 0 0 15px 0 #0260ad73;
+
+          flex-direction: column;
+          text-align: center;
+          height: 100svh;
+          border-radius: 1rem;
+          max-width: 50rem;
+          .text-content {
+            justify-content: center;
+            gap: 2rem;
+            flex: 1;
+            .title {
+              font-size: clamp(3.5rem, 9vw, 13rem);
+            }
+            .subtitle {
+              font-size: clamp(1.3rem, 3.5vw, 5rem);
+            }
+          }
+          .image-content {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+          }
+        }
+        .fourth-content {
+          box-shadow: inset 0 0 15px 0 #0260ad73;
+
+          flex-direction: column;
+          text-align: center;
+          height: 100svh;
+          border-radius: 1rem;
+          max-width: 50rem;
+          .text-content {
+            justify-content: center;
+            gap: 2rem;
+            flex: 1;
+            .title {
+              font-size: clamp(3.5rem, 9vw, 13rem);
+            }
+            .subtitle {
+              font-size: clamp(1.3rem, 3.5vw, 5rem);
+            }
+          }
+          .image-content {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+          }
+        }
       }
     }
 
@@ -853,6 +1049,36 @@ body {
 
       .section-content {
         .first-content {
+          .text-content {
+            .title {
+              font-size: clamp(3rem, 12vw, 35rem);
+            }
+            .subtitle {
+              font-size: clamp(1.5rem, 6vw, 15rem);
+            }
+          }
+        }
+        .second-content {
+          .text-content {
+            .title {
+              font-size: clamp(3rem, 12vw, 35rem);
+            }
+            .subtitle {
+              font-size: clamp(1.5rem, 6vw, 15rem);
+            }
+          }
+        }
+        .third-content {
+          .text-content {
+            .title {
+              font-size: clamp(3rem, 12vw, 35rem);
+            }
+            .subtitle {
+              font-size: clamp(1.5rem, 6vw, 15rem);
+            }
+          }
+        }
+        .fourth-content {
           .text-content {
             .title {
               font-size: clamp(3rem, 12vw, 35rem);
