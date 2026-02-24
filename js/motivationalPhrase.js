@@ -1,6 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initHome() {
   const phraseContainer = document.getElementById('motivational-phrase');
   const refreshBtn = document.getElementById('refresh-btn');
+
+  if (!phraseContainer) return;
 
   async function fetchMotivationalPhrase() {
     phraseContainer.textContent = 'Cargando frase motivacional...';
@@ -14,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const data = await response.json();
 
-      // Validación defensiva
       if (!data || !data.text) {
         throw new Error('Estructura inesperada en la respuesta');
       }
@@ -28,11 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Carga inicial
   fetchMotivationalPhrase();
 
-  // Nueva frase al hacer clic
   if (refreshBtn) {
     refreshBtn.addEventListener('click', fetchMotivationalPhrase);
   }
-});
+}
