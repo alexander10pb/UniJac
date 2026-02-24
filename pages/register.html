@@ -38,11 +38,19 @@
       >
         <div class="form-group">
           <label for="localidad">Localidad</label>
-          <select name="localidad" id="localidad" required>
-            <option selected disabled hidden>Selecciona tu localidad</option>
-            <option value="9">Fontibón</option>
-            <option value="10">Engativá</option>
-            <option value="11">Suba</option>
+          <select name="localidad" id="localidad" aria-live="polite" required>
+            <option selected disabled hidden>
+                Cargando localidades...
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="barrios">Barrio</label>
+          <select name="barrios" id="barrios" aria-live="polite" required>
+            <option selected disabled hidden>
+                Cargando barrios...
+            </option>
           </select>
         </div>
 

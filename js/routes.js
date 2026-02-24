@@ -1,38 +1,94 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =========================
-    // SPA ROUTER
-    // =========================
+    /* =========================
+       VARIABLES BASE
+    ========================= */
+
     const main = document.querySelector("#mainContent");
+    const header = document.querySelector("header");
+
     const homeHTML = main ? main.innerHTML : "";
 
+    /* =========================
+       CARGAR VISTA
+    ========================= */
+
     async function loadView(path) {
-        const res = await fetch(path);
-        const html = await res.text();
-        if (main) main.innerHTML = html;
+        try {
+            const res = await fetch(path);
+
+            if (!res.ok) {
+                throw new Error(`Error HTTP ${res.status}`);
+            }
+
+            const html = await res.text();
+
+            if (main) {
+                main.innerHTML = html;
+            }
+
+        } catch (error) {
+            if (main) {
+                main.innerHTML = `
+                    <div class="not-found">
+                        <div>Error cargando la vista</div>
+                    </div>
+                `;
+            }
+            console.error(error);
+        }
     }
 
-    // =========================
-    // RENDER POR HASH
-    // =========================
-    function render() {
+    /* =========================
+       ROUTER PRINCIPAL
+    ========================= */
+
+    async function render() {
+
         const route = location.hash || "#/";
         window.scrollTo(0, 0);
 
         const isHome = route === "#/" || route === "#/home";
-        const isAuth = route === "#/login" || route === "#/register";
+        const isLogin = route === "#/login";
+        const isRegister = route === "#/register";
 
-        if (header) header.classList.toggle("light-theme", !isHome);
+        if (header) {
+            header.classList.toggle("light-theme", !isHome);
+        }
+
+        /* ===== HOME ===== */
 
         if (isHome) {
             if (main) main.innerHTML = homeHTML;
+
+            if (typeof initHome === "function") {
+                initHome();
+            }
+
             return;
         }
 
-        if (isAuth) {
-            if (route === "#/login") return loadView("pages/login.html");
-            return loadView("pages/register.html");
+        /* ===== LOGIN ===== */
+
+        if (isLogin) {
+            await loadView("pages/login.html");
+            return;
         }
+
+        /* ===== REGISTER ===== */
+
+        if (isRegister) {
+            await loadView("pages/register.html");
+
+            // Inicializar lógica específica
+            if (typeof initRegister === "function") {
+                initRegister();
+            }
+
+            return;
+        }
+
+        /* ===== 404 ===== */
 
         if (main) {
             main.innerHTML = `
@@ -43,7 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /* =========================
+       EVENTOS
+    ========================= */
+
     window.addEventListener("hashchange", render);
+
     render();
 
-})
+});
