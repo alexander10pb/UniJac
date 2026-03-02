@@ -1,49 +1,110 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // =========================
-    // SPA ROUTER
-    // =========================
     const main = document.querySelector("#mainContent");
+    const header = document.querySelector("header");
     const homeHTML = main ? main.innerHTML : "";
+    const btnRegister = document.querySelector("#btnRegister");
 
+    // RENDERIZAR VISTA
     async function loadView(path) {
         const res = await fetch(path);
         const html = await res.text();
         if (main) main.innerHTML = html;
     }
 
-    // =========================
-    // RENDER POR HASH
-    // =========================
-    function render() {
-        const route = location.hash || "#/";
-        window.scrollTo(0, 0);
+    // INICIAR VISTA INICIAL
+    const initHome = () => {
+        // LAZY LOADING
+        const sections = document.querySelectorAll(".occult");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal");
+                }
+            });
+        }, { rootMargin: "1px" });
+        sections.forEach((section) => observer.observe(section));
 
-        const isHome = route === "#/" || route === "#/home";
-        const isAuth = route === "#/login" || route === "#/register";
+        const images = document.querySelectorAll('[data-src]');
+        const options = { rootMargin: "200px" };
+        const callBack = (entries, self) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.src = entry.target.getAttribute("data-src");
+                    self.unobserve(entry.target);
+                }
+            });
+        };
 
-        if (header) header.classList.toggle("light-theme", !isHome);
+        const observer2 = new IntersectionObserver(callBack, options);
+        images.forEach((image) => observer2.observe(image));
 
-        if (isHome) {
-            if (main) main.innerHTML = homeHTML;
+        const phraseContainer = document.querySelector('#motivationalPhrase');
+        const authorContainer = document.querySelector('#authorText');
+        if (!phraseContainer || !authorContainer) {
+            console.error('Faltan elementos DOM');
             return;
         }
 
-        if (isAuth) {
-            if (route === "#/login") return loadView("pages/login.html");
-            return loadView("pages/register.html");
-        }
+        // API FRASE
+        const autoresMap = {
+            1: "Maya Angelou", 2: "Albert Einstein", 3: "Marcus Aurelius",
+            4: "Rumi", 5: "Thich Nhat Hanh", 6: "Oprah Winfrey",
+            7: "Frida Kahlo", 8: "Gabriela Mistral", 9: "Julio Cortázar",
+            10: "Gabriel García Márquez", 11: "Mario Vargas Llosa",
+            12: "Miguel de Cervantes", 13: "Miguel de Cervantes", null: "Anónimo"
+        };
 
-        if (main) {
-            main.innerHTML = `
-                <div class="not-found">
-                    <div>Página no encontrada <span class="code">404</span></div>
-                </div>
-            `;
+        async function fetchMotivationalPhrase() {
+            phraseContainer.textContent = 'Cargando...';
+            try {
+                const response = await fetch('https://positive-api.online/phrase/esp');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (!data.text) throw new Error('Sin frase');
+                const authorName = autoresMap[data.author_id] || 'anónimo';
+                phraseContainer.innerHTML = `"${data.text}"`;
+                authorContainer.textContent = `${authorName}`;
+            } catch (error) {
+                console.error('Error API:', error);
+                phraseContainer.textContent = 'Frase no disponible hoy.';
+                authorContainer.textContent = '';
+            }
+        }
+        fetchMotivationalPhrase();
+    };
+
+    async function hashRoutes() {
+        window.scrollTo(0, 0);
+
+        const route = location.hash || "#/home";
+        const isHome = route === "#/" || route === "#/home";
+
+        if (header) header.classList.toggle("light-theme", !isHome);
+        if (btnRegister) btnRegister.style.display = route === "#/register" ? "none" : "flex";
+
+        switch (route) {
+            case "#/home":
+                if (main) main.innerHTML = homeHTML;
+                initHome();
+                break;
+            case "#/login":
+                await loadView("pages/login.html");
+                break;
+            case "#/about":
+                await loadView("pages/about.html");
+                break;
+            case "#/contact":
+                await loadView("pages/contact.html");
+                break;
+            case "#/register":
+                await loadView("pages/register.html");
+                if (typeof initRegister === "function") initRegister();
+                break;
+            default:
+                if (main) main.innerHTML = 'Página no encontrada';
         }
     }
 
-    window.addEventListener("hashchange", render);
-    render();
-
-})
+    window.addEventListener("hashchange", hashRoutes);
+    hashRoutes();
+});
