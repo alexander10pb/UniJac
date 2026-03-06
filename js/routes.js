@@ -1,7 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { initRegister, inputValidator } from './register.js';
+
+let homeHTML = '';  // Global para home
+
+export function initRouter(initialHomeHTML) {
+    homeHTML = initialHomeHTML;
     const main = document.querySelector("#mainContent");
     const header = document.querySelector("header");
-    const homeHTML = main ? main.innerHTML : "";
     const btnRegister = document.querySelector("#btnRegister");
 
     // RENDERIZAR VISTA
@@ -13,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // INICIAR VISTA INICIAL
     const initHome = () => {
+
         // LAZY LOADING
         const images = document.querySelectorAll('[data-src]');
         const options = { rootMargin: "200px" };
@@ -24,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         };
-
         const observer2 = new IntersectionObserver(callBack, options);
         images.forEach((image) => observer2.observe(image));
 
+        // API FRASES
         const phraseContainer = document.querySelector('#motivationalPhrase');
         const authorContainer = document.querySelector('#authorText');
         if (!phraseContainer || !authorContainer) {
@@ -35,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // API FRASE
         const autoresMap = {
             1: "Maya Angelou", 2: "Albert Einstein", 3: "Marcus Aurelius",
             4: "Rumi", 5: "Thich Nhat Hanh", 6: "Oprah Winfrey",
@@ -63,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchMotivationalPhrase();
     };
 
+    // Manejo de rutas
     async function hashRoutes() {
         window.scrollTo(0, 0);
-
         const route = location.hash || "#/home";
         const isHome = route === "#/" || route === "#/home";
 
@@ -88,13 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             case "#/register":
                 await loadView("pages/register.html");
-                if (typeof initRegister === "function") initRegister();
+                await initRegister();
                 break;
             default:
                 if (main) main.innerHTML = 'Página no encontrada';
         }
     }
 
+    // Eventos
     window.addEventListener("hashchange", hashRoutes);
     hashRoutes();
-});
+}

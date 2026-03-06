@@ -1,13 +1,22 @@
-window.location.hash = "#/home"
+import { initRegister, inputValidator } from './register.js';
+
+import { initRouter } from './routes.js';
+
+window.location.hash = "#/home";
 
 window.addEventListener("load", () => {
-    // Mostar loader mientras se carga el DOM por completo
+    // Loader al final del load
     const contentLoader = document.querySelector("#contentLoader");
     contentLoader?.style.setProperty('opacity', '0');
     contentLoader?.style.setProperty('visibility', 'hidden');
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+    // CAPTURAR homeHTML
+    const main = document.querySelector("#mainContent");
+    const homeHTML = main ? main.innerHTML : "";
+
+    // =================================================
     const header = document.querySelector('header');
     const btnMenu = document.querySelector("#btnMenu");
     const menu = document.querySelector("#menuContainer");
@@ -16,7 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const accessContent = document.querySelector('#accessContent');
     const overlay = document.querySelector('#overlay');
     let scrollPrev = window.scrollY;
-
 
     document.addEventListener('click', (e) => {
         // Scroll button
@@ -29,16 +37,21 @@ window.addEventListener("DOMContentLoaded", () => {
         if (e.target.closest('#nextStep')) {
             const btn = e.target.closest('#nextStep');
             btn.classList.add('loadersm');
-            btn.textContent = '';
+
+
             setTimeout(() => {
-                document.querySelector("#currentStep").textContent = 'Paso 2 de 2';
-                document.querySelector("#step1Content")?.classList.add('next');
-                document.querySelector("#step2Content")?.classList.add('active');
-                document.querySelector("#backStep1")?.classList.add('visible');
-                btn.classList.remove('loadersm');
+                const isValid = inputValidator();
+
+                if (isValid === true) {
+                    document.querySelector("#currentStep").textContent = 'Paso 2 de 2';
+                    document.querySelector("#step1Content")?.classList.add('next');
+                    document.querySelector("#step2Content")?.classList.add('active');
+                    document.querySelector("#backStep1")?.classList.add('visible');
+                }
                 btn.textContent = 'Continuar';
-            }, 500);
-            return;
+                btn.classList.remove('loadersm');
+            }, 400);
+            btn.textContent = '';
         }
 
         if (e.target.closest('#backStep1')) {
@@ -63,7 +76,6 @@ window.addEventListener("DOMContentLoaded", () => {
             overlay.classList.remove('active');
         }
     });
-    // =================================================
 
     // Evento scroll
     window.addEventListener('scroll', () => {
@@ -78,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
         header?.classList.toggle('on-scroll', window.scrollY >= 50);
     });
 
-    btnMenu.addEventListener('click', (e) => {
+    btnMenu?.addEventListener('click', (e) => {
         e.stopPropagation();
         menu.classList.toggle('is-open');
         overlay.classList.toggle('active');
@@ -88,7 +100,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const btnDisminuir = document.querySelector("#disminuirFuente");
     const btnContraste = document.querySelector("#contraste");
 
-    // Tamano base de fuente
     let tamanoFuente = 16;
 
     if (btnAumentar && btnDisminuir && btnContraste) {
@@ -110,10 +121,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         btnContraste.addEventListener('click', () => {
             btnContraste.classList.toggle('active');
-
             const current = html.getAttribute('data-theme');
             html.setAttribute('data-theme', current === '' ? 'contrast' : '');
         });
     }
 
+    // INICIAR ROUTER
+    initRouter(homeHTML);
 });

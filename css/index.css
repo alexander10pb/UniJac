@@ -830,7 +830,7 @@ body {
             flex-direction: column;
             width: 100%;
             transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
-            gap: 2rem;
+            gap: 1.5rem;
             .form-group {
               display: flex;
               flex-direction: column;
@@ -851,6 +851,10 @@ body {
                   border: 1px var(--border-input-focus) solid;
                   box-shadow: 0 0 0 3px #cfcfcf;
                 }
+
+                &.error {
+                  box-shadow: 0 0 0 3px #ff8585;
+                }
               }
               label {
                 font-size: 0.9rem;
@@ -861,6 +865,10 @@ body {
                   margin-left: 2px;
                   font-size: 1rem;
                 }
+              }
+              .error-message {
+                color: red;
+                font-size: 0.9rem;
               }
             }
             .terms {

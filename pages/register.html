@@ -38,8 +38,11 @@
         <div class="form-group">
           <label for="localidad">Localidad</label>
           <select name="localidad" id="localidad" aria-live="polite" required>
-            <option selected disabled hidden>Selecciona localidad</option>
+            <option value="" selected disabled hidden>
+              Selecciona localidad
+            </option>
           </select>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
@@ -51,18 +54,21 @@
             required
             disabled
           >
-            <option selected disabled hidden>Selecciona barrio</option>
+            <option value="" selected disabled hidden>Selecciona barrio</option>
           </select>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" id="nombre" required />
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="apellido">Apellido</label>
           <input type="text" name="apellido" id="apellido" required />
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <p class="terms">
@@ -89,7 +95,7 @@
       >
         <div class="form-group">
           <label for="correo">Correo electrónico</label>
-          <input type="email" name="correo" id="correo" required />
+          <input type="email" name="correo" id="email" required />
         </div>
 
         <div class="form-group">
