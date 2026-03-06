@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isHome = route === "#/" || route === "#/home";
         const isLogin = route === "#/login";
         const isRegister = route === "#/register";
+        const isNeighborhoods = route === "#/neighborhoods";
 
         if (header) {
             header.classList.toggle("light-theme", !isHome);
@@ -72,6 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isLogin) {
             await loadView("pages/login.html");
+
+            if (typeof initLoginSupabase === "function") {
+                initLoginSupabase();
+            }
+
             return;
         }
 
@@ -85,6 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 initRegister();
             }
 
+            return;
+        }
+
+        if (isNeighborhoods) {
+            await loadView("pages/neighborhoods.html");
             return;
         }
 
