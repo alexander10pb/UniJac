@@ -1,3 +1,5 @@
+window.location.hash = "#/home"
+
 window.addEventListener("load", () => {
     // Mostar loader mientras se carga el DOM por completo
     const contentLoader = document.querySelector("#contentLoader");
