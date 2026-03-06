@@ -76,3 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+supabaseClient.auth.getSession().then(({ data }) => {
+  console.log("SESSION:", data.session);
+});

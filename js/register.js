@@ -1,6 +1,7 @@
 function initRegister() {
     initLocalidades();
     initBarriosListener();
+    initRegisterSupabase();
 }
 
 /* =========================
@@ -106,4 +107,79 @@ async function fetchBarrios(localidad, selectBarrios) {
     } finally {
         selectBarrios.disabled = false;
     }
+}
+
+function initRegisterSupabase() {
+
+    const form = document.querySelector(".form-content form");
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+        const localidad = document.getElementById("localidad").value;
+        const barrio = document.getElementById("barrios").value;
+        const correo = document.getElementById("correo").value;
+        const password = document.getElementById("password").value;
+
+        try {
+
+            /* ===== CREAR USUARIO ===== */
+
+            const { data, error } = await supabaseClient.auth.signUp({
+                email: correo,
+                password: password
+            });
+
+            if (error) {
+                alert(error.message);
+                return;
+            }
+
+            const user = data.user;
+
+            if (!user) {
+                alert("No se pudo crear el usuario");
+                return;
+            }
+
+            /* ===== ACTUALIZAR DATOS ADICIONALES ===== */
+
+            const { error: updateError } = await supabaseClient
+                .from("users")
+                .update({
+                    nombre: nombre,
+                    apellido: apellido,
+                    localidad: localidad,
+                    barrio: barrio
+                })
+                .eq("id", user.id);
+
+            if (updateError) {
+                alert(updateError.message);
+                return;
+            }
+
+            alert("Cuenta creada correctamente");
+
+            /* ===== REDIRECCION ===== */
+
+            const { data: sessionData } = await supabaseClient.auth.getSession();
+
+            if (sessionData.session) {
+                location.hash = "#/neighborhoods";
+            }
+
+        } catch (err) {
+
+            console.error("ERROR REGISTER:", err);
+            alert("Error creando la cuenta");
+
+        }
+
+    });
+
 }
