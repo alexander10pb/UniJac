@@ -1,121 +1,108 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { initRegister, initRegisterSupabase } from './register.js';
+import { initLoginSupabase } from './login.js';
 
-    /* =========================
-       VARIABLES BASE
-    ========================= */
+let homeHTML = '';  // Global para home
 
+export function initRouter(initialHomeHTML) {
+    homeHTML = initialHomeHTML;
     const main = document.querySelector("#mainContent");
     const header = document.querySelector("header");
+    const btnRegister = document.querySelector("#btnRegister");
 
-    const homeHTML = main ? main.innerHTML : "";
-
-    /* =========================
-       CARGAR VISTA
-    ========================= */
-
+    // RENDERIZAR VISTA
     async function loadView(path) {
-        try {
-            const res = await fetch(path);
-
-            if (!res.ok) {
-                throw new Error(`Error HTTP ${res.status}`);
-            }
-
-            const html = await res.text();
-
-            if (main) {
-                main.innerHTML = html;
-            }
-
-        } catch (error) {
-            if (main) {
-                main.innerHTML = `
-                    <div class="not-found">
-                        <div>Error cargando la vista</div>
-                    </div>
-                `;
-            }
-            console.error(error);
-        }
+        const res = await fetch(path);
+        const html = await res.text();
+        if (main) main.innerHTML = html;
     }
 
-    /* =========================
-       ROUTER PRINCIPAL
-    ========================= */
+    // INICIAR VISTA INICIAL
+    const initHome = () => {
 
-    async function render() {
+        // LAZY LOADING
+        const images = document.querySelectorAll('[data-src]');
+        const options = { rootMargin: "200px" };
+        const callBack = (entries, self) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.src = entry.target.getAttribute("data-src");
+                    self.unobserve(entry.target);
+                }
+            });
+        };
+        const observer2 = new IntersectionObserver(callBack, options);
+        images.forEach((image) => observer2.observe(image));
 
-        const route = location.hash || "#/";
+        // API FRASES
+        const phraseContainer = document.querySelector('#motivationalPhrase');
+        const authorContainer = document.querySelector('#authorText');
+        if (!phraseContainer || !authorContainer) {
+            console.error('Faltan elementos DOM');
+            return;
+        }
+
+        const autoresMap = {
+            1: "Maya Angelou", 2: "Albert Einstein", 3: "Marcus Aurelius",
+            4: "Rumi", 5: "Thich Nhat Hanh", 6: "Oprah Winfrey",
+            7: "Frida Kahlo", 8: "Gabriela Mistral", 9: "Julio Cortázar",
+            10: "Gabriel García Márquez", 11: "Mario Vargas Llosa",
+            12: "Miguel de Cervantes", 13: "Miguel de Cervantes", null: "Anónimo"
+        };
+
+        async function fetchMotivationalPhrase() {
+            phraseContainer.textContent = 'Cargando...';
+            try {
+                const response = await fetch('https://positive-api.online/phrase/esp');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (!data.text) throw new Error('Sin frase');
+                const authorName = autoresMap[data.author_id] || 'anónimo';
+                phraseContainer.innerHTML = `"${data.text}"`;
+                authorContainer.textContent = `${authorName}`;
+            } catch (error) {
+                console.error('Error API:', error);
+                phraseContainer.textContent = 'Frase no disponible hoy.';
+                authorContainer.textContent = '';
+            }
+        }
+        fetchMotivationalPhrase();
+    };
+
+    // Manejo de rutas
+    async function hashRoutes() {
         window.scrollTo(0, 0);
-
+        const route = location.hash || "#/home";
         const isHome = route === "#/" || route === "#/home";
-        const isLogin = route === "#/login";
-        const isRegister = route === "#/register";
-        const isNeighborhoods = route === "#/neighborhoods";
 
-        if (header) {
-            header.classList.toggle("light-theme", !isHome);
-        }
+        if (header) header.classList.toggle("light-theme", !isHome);
+        if (btnRegister) btnRegister.style.display = route === "#/register" ? "none" : "flex";
 
-        /* ===== HOME ===== */
-
-        if (isHome) {
-            if (main) main.innerHTML = homeHTML;
-
-            if (typeof initHome === "function") {
+        switch (route) {
+            case "#/home":
+                if (main) main.innerHTML = homeHTML;
                 initHome();
-            }
-
-            return;
-        }
-
-        /* ===== LOGIN ===== */
-
-        if (isLogin) {
-            await loadView("pages/login.html");
-
-            if (typeof initLoginSupabase === "function") {
-                initLoginSupabase();
-            }
-
-            return;
-        }
-
-        /* ===== REGISTER ===== */
-
-        if (isRegister) {
-            await loadView("pages/register.html");
-
-            // Inicializar lógica específica
-            if (typeof initRegister === "function") {
-                initRegister();
-            }
-
-            return;
-        }
-
-        if (isNeighborhoods) {
-            await loadView("pages/neighborhoods.html");
-            return;
-        }
-
-        /* ===== 404 ===== */
-
-        if (main) {
-            main.innerHTML = `
-                <div class="not-found">
-                    <div>Página no encontrada <span class="code">404</span></div>
-                </div>
-            `;
+                break;
+            case "#/login":
+                await loadView("pages/login.html");
+                await initLoginSupabase();
+                break;
+            case "#/about":
+                await loadView("pages/about.html");
+                break;
+            case "#/contact":
+                await loadView("pages/contact.html");
+                break;
+            case "#/register":
+                await loadView("pages/register.html");
+                await initRegister();
+                await initRegisterSupabase();
+                break;
+            default:
+                if (main) main.innerHTML = 'Página no encontrada';
         }
     }
 
-    /* =========================
-       EVENTOS
-    ========================= */
-
-    window.addEventListener("hashchange", render);
-
-    render();
-
-});
+    // Eventos
+    window.addEventListener("hashchange", hashRoutes);
+    hashRoutes();
+}
