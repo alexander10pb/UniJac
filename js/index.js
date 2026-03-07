@@ -63,6 +63,18 @@ window.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        if (e.target.closest('#logIn')) {
+            document.querySelector("#logIn").textContent = "";
+            e.target.classList.add('loadersm');
+
+            setTimeout(() => {
+                e.target.classList.remove('loadersm');
+                document.querySelector("#logIn").textContent = "Iniciar sesión";
+            }, 400);
+            return;
+        }
+
+
         if (!menu.contains(e.target) && !btnMenu.contains(e.target)) {
             menu.classList.remove('is-open');
             overlay.classList.remove('active');
