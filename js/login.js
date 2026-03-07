@@ -37,7 +37,7 @@ export function initLoginSupabase() {
 
       /* ===== REDIRECCION ===== */
 
-      window.location.href = "./pages/dashboard/layout.html#/summary";
+      window.location.href = "./pages/dashboard/layout.html#/inicio";
 
     } catch (err) {
 

@@ -10,7 +10,7 @@ async function loadView(path) {
 
 // Breadcrumb posicion hash actual
 function updateActiveButton() {
-    const currentHash = window.location.hash || '#/summary';
+    const currentHash = window.location.hash || '#/inicio';
     document.querySelectorAll(".btn-action").forEach(btn => {
         btn.classList.remove("active");
         if (btn.getAttribute('href') === currentHash) {
@@ -33,7 +33,7 @@ async function hashRoutes() {
         case "#/eventos":
             await loadView("/pages/dashboard/events.html");
             break;
-        case "#/infraestrutura":
+        case "#/infraestructura":
             await loadView("/pages/dashboard/infrastructure.html");
             break;
         case "#/criticos":

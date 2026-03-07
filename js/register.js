@@ -224,7 +224,7 @@ export function initRegisterSupabase() {
             const { data: sessionData } = await supabaseClient.auth.getSession();
 
             if (sessionData.session) {
-                location.hash = "#/neighborhoods";
+                window.location.href = "./pages/dashboard/layout.html#/inicio";
             }
 
         } catch (err) {
