@@ -29,7 +29,6 @@
       </button>
     </div>
     <div class="steps-content">
-      
       <!-- PASO 1 -->
       <fieldset
         id="step1Content"
@@ -39,32 +38,38 @@
         <div class="form-group">
           <label for="localidad">Localidad</label>
           <select name="localidad" id="localidad" aria-live="polite" required>
-            <option selected disabled hidden>
-                Cargando localidades...
+            <option value="" selected disabled hidden>
+              Selecciona localidad
             </option>
           </select>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="barrios">Barrio</label>
-          <select name="barrios" id="barrios" aria-live="polite" required>
-            <option selected disabled hidden>
-                Cargando barrios...
-            </option>
+          <select
+            name="barrios"
+            id="barrios"
+            aria-live="polite"
+            required
+            disabled
+          >
+            <option value="" selected disabled hidden>Selecciona barrio</option>
           </select>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" id="nombre" required />
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="apellido">Apellido</label>
           <input type="text" name="apellido" id="apellido" required />
+          <span class="error-message" aria-live="polite"></span>
         </div>
-
-        <div class="h-captcha"></div>
 
         <p class="terms">
           Al continuar, aceptas el uso de cookies y la política de privacidad al
@@ -90,7 +95,7 @@
       >
         <div class="form-group">
           <label for="correo">Correo electrónico</label>
-          <input type="email" name="correo" id="correo" required />
+          <input type="email" name="correo" id="email" required />
         </div>
 
         <div class="form-group">
@@ -98,9 +103,7 @@
           <input type="password" name="password" id="password" required />
         </div>
 
-        <button class="next-step" type="submit">
-            Crear cuenta
-        </button>
+        <button class="next-step" type="submit">Crear cuenta</button>
       </fieldset>
     </div>
   </form>
