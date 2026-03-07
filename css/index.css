@@ -1020,7 +1020,9 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      transition: background-color 0.3s ease-in-out, scale .2s ease-in-out;
+      transition:
+        background-color 0.3s ease-in-out,
+        scale 0.2s ease-in-out;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       &:hover {
         scale: 1.1;
@@ -1354,8 +1356,8 @@ body {
         border-radius: 50%;
         border: 0;
         background: var(--background-tertiary);
-        box-shadow: 0 1px 3px 1px #00000054;
-        width: 3.2rem;
+        border: 4px rgb(216, 216, 216) solid;
+        width: 3.3rem;
         height: 3.3rem;
         svg {
           path {
@@ -1457,6 +1459,7 @@ body {
       z-index: 10;
       width: 3.2rem;
       height: 3.2rem;
+      border: 4px #2361a8 solid;
 
       svg {
         path {
