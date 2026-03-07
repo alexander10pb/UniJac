@@ -1,13 +1,12 @@
-function initRegister() {
+import { supabaseClient } from './supabase.js'
+
+export function initRegister() {
     initLocalidades();
     initBarriosListener();
     initRegisterSupabase();
 }
 
-/* =========================
-   LOCALIDADES
-========================= */
-
+/* ============= API LOCALIDADES BOGOTÁ ============= */
 function initLocalidades() {
     const selectLocalidad = document.getElementById('localidad');
     if (!selectLocalidad) return;
@@ -19,7 +18,7 @@ async function fetchLocalidades(selectLocalidad) {
 
     selectLocalidad.disabled = true;
     selectLocalidad.innerHTML =
-        '<option selected disabled hidden>Cargando localidades...</option>';
+        '<option value="" selected disabled hidden>Cargando localidades...</option>';
 
     try {
         const response = await fetch(
@@ -29,7 +28,7 @@ async function fetchLocalidades(selectLocalidad) {
         const data = await response.json();
 
         selectLocalidad.innerHTML =
-            '<option selected disabled hidden>Selecciona tu localidad</option>';
+            '<option value="" selected disabled hidden>Selecciona tu localidad</option>';
 
         data.features
             .sort((a, b) =>
@@ -74,7 +73,7 @@ async function fetchBarrios(localidad, selectBarrios) {
 
     selectBarrios.disabled = true;
     selectBarrios.innerHTML =
-        '<option selected disabled hidden>Cargando barrios...</option>';
+        '<option value="" selected disabled hidden>Cargando barrios...</option>';
 
     try {
 
@@ -84,7 +83,7 @@ async function fetchBarrios(localidad, selectBarrios) {
         const data = await response.json();
 
         selectBarrios.innerHTML =
-            '<option selected disabled hidden>Selecciona tu barrio</option>';
+            '<option value="" selected disabled hidden>Selecciona tu barrio</option>';
 
         data.features
             .sort((a, b) =>
@@ -102,14 +101,69 @@ async function fetchBarrios(localidad, selectBarrios) {
 
     } catch (error) {
         selectBarrios.innerHTML =
-            '<option disabled selected>Error cargando barrios</option>';
+            '<option value="" disabled selected>Error cargando barrios</option>';
         console.error(error);
     } finally {
         selectBarrios.disabled = false;
     }
 }
 
-function initRegisterSupabase() {
+export function inputValidator() {
+    const localidad = document.querySelector('#localidad');
+    const barrio = document.querySelector('#barrios');
+    const nombre = document.querySelector('#nombre');
+    const apellido = document.querySelector('#apellido');
+
+
+    if (!localidad || !barrio || !nombre || !apellido) {
+        return false;
+    }
+
+    const regexNombre = /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,}$/;
+    const regexApellido = /^[a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,}$/;
+
+    const isNombreValid = regexNombre.test(nombre.value.trim());
+    const isApellidoValid = regexApellido.test(apellido.value.trim());
+    const isLocalidadValid = localidad.value.trim().length >= 1;
+    const isBarrioValid = barrio.value.trim().length >= 1;
+
+    // MOSTRAR ERRORES
+    if (!isLocalidadValid) {
+        localidad.classList.add('error');
+        localidad.parentNode.querySelector('.error-message').textContent = 'Selecciona una localidad.';
+    } else {
+        localidad.classList.remove('error');
+        localidad.parentNode.querySelector('.error-message').textContent = '';
+    }
+
+    if (!isBarrioValid) {
+        barrio.classList.add('error');
+        barrio.parentNode.querySelector('.error-message').textContent = 'Selecciona un barrio.';
+    } else {
+        barrio.classList.remove('error');
+        barrio.parentNode.querySelector('.error-message').textContent = '';
+    }
+
+    if (!isNombreValid) {
+        nombre.classList.add('error');
+        nombre.parentNode.querySelector('.error-message').textContent = 'Nombre inválido.';
+    } else {
+        nombre.classList.remove('error');
+        nombre.parentNode.querySelector('.error-message').textContent = '';
+    }
+
+    if (!isApellidoValid) {
+        apellido.classList.add('error');
+        apellido.parentNode.querySelector('.error-message').textContent = 'Apellido inválido.';
+    } else {
+        apellido.classList.remove('error');
+        apellido.parentNode.querySelector('.error-message').textContent = '';
+    }
+
+    return isNombreValid && isApellidoValid && isLocalidadValid && isBarrioValid;
+}
+
+export function initRegisterSupabase() {
 
     const form = document.querySelector(".form-content form");
     if (!form) return;
