@@ -106,63 +106,39 @@
   </section>
 
   <!-- Reportes de la comunidad -->
-  <section class="reports" aria-labelledby="reportes-comunidad">
-    <h2 id="reportes-comunidad">Reportes de la comunidad</h2>
-
-    <form aria-label="Filtros de reportes">
-      <label class="sr-only" for="filtro">Filtrar:</label>
-      <select id="filtro" name="filtro">
-        <option value="30">Últimos 30 días</option>
-        <option value="60">Últimos 60 días</option>
-      </select>
-    </form>
-
-    <article class="card">
-      <div class="header-card">
-        <h3>Poste de luz no está funcionando</h3>
-        <p class="time-card">
-          <time datetime="2026-01-31">Reportado el 31 de enero de 2026</time>
+  <div class="content-reports">
+    <div class="content-filter">
+      <h2 id="reportes-comunidad">Últimos reportes</h2>
+      <form class="filter-reports" aria-label="Filtros de reportes">
+        <label class="sr-only" for="filtro">Filtrar:</label>
+        <select disabled id="filtro" name="filtro">
+          <option value="30">Últimos 30 días</option>
+          <option value="60">Últimos 60 días</option>
+        </select>
+      </form>
+    </div>
+    <section class="reports" aria-labelledby="reportes-comunidad">
+      <article class="card">
+        <div class="header-card">
+          <h3>Poste de luz no está encendiendo</h3>
+          <p class="time-card">
+            <time datetime="2026-01-31">07 de marzo de 2026</time>
+          </p>
+        </div>
+        <div class="info-card">
+          <div class="user-card"><span class="circle"></span>Vecino anónimo</div>
+          <div class="category-card">Daño de infraestructura</div>
+        </div>
+        <p class="message">
+          Buenas tardes vecinos, el poste de la manzana X no está alumbrando
+          correctamente desde hace varios días. Por favor tengan mucho cuidado
+          al pasar por este lugar durante las noches, ya que la falta de
+          iluminación puede representar un riesgo de seguridad. Se recomienda
+          evitar transitar por esta zona en horarios oscuros. Se ha reportado el
+          inconveniente a las autoridades correspondientes para su pronta
+          reparación.
         </p>
-      </div>
-      <span class="info-card">
-        <p class="user-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-            >
-              <path d="M17 8.5a5 5 0 1 0-10 0a5 5 0 0 0 10 0" />
-              <path d="M19 20.5a7 7 0 1 0-14 0" />
-            </g></svg
-          >Vecino anónimo
-        </p>
-        <p class="category-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
-            >
-              <circle cx="12" cy="12" r="10" stroke-width="1.5" />
-              <path stroke-width="1.5" d="M12 16v-4.5" />
-              <path stroke-width="1.8" d="M12 8.012v-.01" />
-            </g></svg
-          >Daños de infraestructura
-        </p>
-      </span>
-
-      <p>
-        Buenas tardes vecinos, el poste de la manzana X no está alumbrando. Por
-        favor tengan cuidado al pasar por este lugar.
-      </p>
-
-      <a href="#" aria-label="Ver detalles del reporte de poste de luz"
-        >Ver reporte</a
-      >
-    </article>
-  </section>
+      </article>
+    </section>
+  </div>
 </div>
