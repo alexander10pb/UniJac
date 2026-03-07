@@ -70,7 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 e.target.classList.remove('loadersm');
                 document.querySelector("#logIn").textContent = "Iniciar sesión";
-            }, 400);
+            }, 400); 
             return;
         }
 
