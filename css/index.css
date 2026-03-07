@@ -439,8 +439,27 @@ body {
           overflow: hidden;
           border: 1px var(--background-primary) solid;
           backdrop-filter: blur(10px);
-          &:hover {
-            background: var(--text-primary) 00033;
+          &::before {
+            content: "Iniciar sesión";
+            background-color: var(--background-primary);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(100%);
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            transition:
+              transform 0.2s ease,
+              opacity 0.2s ease,
+              background-color 0.1s ease;
+          }
+          &:hover::before {
+            opacity: 1;
+            transform: translateY(0);
+            color: var(--text-primary);
           }
         }
         .button-register {
@@ -581,7 +600,7 @@ body {
             }
             .info {
               font-size: 1.1rem;
-              color: var(--text-secondary);
+              color: var(--text-primary);
             }
           }
         }
@@ -1157,10 +1176,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    margin-block: 3rem;
     .cards {
       display: flex;
-      gap: 2rem;
       flex-wrap: wrap;
       justify-content: flex-start;
       flex: row;
@@ -1168,10 +1186,11 @@ body {
       min-width: 300px;
       width: 100%;
       max-width: 50rem;
+      background: var(--background-secondary);
+      border-radius: 1rem;
     }
     .card {
       flex: row;
-      border: 1px solid var(--border);
       border-radius: 1rem;
       padding: 2.5rem;
       width: auto;
@@ -1179,12 +1198,12 @@ body {
       transition: all 0.35s ease;
     }
     .card h3 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       margin-bottom: 1.2rem;
       color: var(--text-primary);
     }
     .card p {
-      color: var(--text-secondary);
+      color: var(--text-primary);
       line-height: 1.7;
       margin-bottom: 1rem;
       font-size: 0.95rem;
@@ -1336,7 +1355,7 @@ body {
         background: var(--background-tertiary);
         box-shadow: 0 1px 3px 1px #00000054;
         width: 3.2rem;
-        height: 3.2rem;
+        height: 3.3rem;
         svg {
           path {
             stroke: var(--blue);
