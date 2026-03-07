@@ -1322,7 +1322,7 @@ body {
     flex-direction: column;
     align-items: center;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 50%;
     gap: 1rem;
     z-index: 40;
 
@@ -1334,9 +1334,9 @@ body {
         border-radius: 50%;
         border: 0;
         background: var(--background-tertiary);
-        box-shadow: 0 1px 3px 0 #00000054;
-        width: 3rem;
-        height: 3rem;
+        box-shadow: 0 1px 3px 1px #00000054;
+        width: 3.2rem;
+        height: 3.2rem;
         svg {
           path {
             stroke: var(--blue);
@@ -1435,8 +1435,8 @@ body {
       visibility: hidden;
       box-shadow: 0 5px 10px 0 var(--text-primary) 0004d;
       z-index: 10;
-      width: 3rem;
-      height: 3rem;
+      width: 3.2rem;
+      height: 3.2rem;
 
       svg {
         path {
