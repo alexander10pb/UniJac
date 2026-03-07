@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="es" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniJAC | Dashboard</title>
+    <meta name="description" content="Dashboard" />
+    <link rel="icon" href="/assets/img/icon.svg" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+    <!-- DASHBOARD -->
+    <div class="layout">
+      <!-- Panel izquierdo -->
+      <aside id="menuLeft" class="aside-left">
+        <div
+          class="actions-left"
+          role="button"
+          aria-label="Secciones de reportes"
+        >
+          <!-- Botones de navegación del barrio -->
+          <a href="#/inicio" class="btn-action">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M3 11.99v2.51c0 3.3 0 4.95 1.025 5.975S6.7 21.5 10 21.5h4c3.3 0 4.95 0 5.975-1.025S21 17.8 21 14.5v-2.51c0-1.682 0-2.522-.356-3.25s-1.02-1.244-2.346-2.276l-2-1.555C14.233 3.303 13.2 2.5 12 2.5s-2.233.803-4.298 2.409l-2 1.555C4.375 7.496 3.712 8.012 3.356 8.74S3 10.308 3 11.99M16 17H8"
+              />
+            </svg>
+            <span>Inicio</span>
+          </a>
+
+          <a href="#/eventos" class="btn-action">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M16 2v4M8 2v4m5-2h-2C7.229 4 5.343 4 4.172 5.172S3 8.229 3 12v2c0 3.771 0 5.657 1.172 6.828S7.229 22 11 22h2c3.771 0 5.657 0 6.828-1.172S21 17.771 21 14v-2c0-3.771 0-5.657-1.172-6.828S16.771 4 13 4M3 10h18"
+              />
+            </svg>
+            <span>Eventos</span>
+          </a>
+          <a href="#/infraestructura" class="btn-action">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                d="m5.67 9.914l3.062-4.143c1.979-2.678 2.969-4.017 3.892-3.734s.923 1.925.923 5.21v.31c0 1.185 0 1.777.379 2.148l.02.02c.387.363 1.003.363 2.236.363c2.22 0 3.329 0 3.704.673l.018.034c.354.683-.289 1.553-1.574 3.29l-3.062 4.144c-1.98 2.678-2.969 4.017-3.892 3.734s-.923-1.925-.923-5.21v-.31c0-1.185 0-1.777-.379-2.148l-.02-.02c-.387-.363-1.003-.363-2.236-.363c-2.22 0-3.329 0-3.703-.673l-.019-.034c-.354-.683.289-1.552 1.574-3.29Z"
+              />
+            </svg>
+            <span>Infraestructura</span>
+          </a>
+
+          <a id="extraviosBtn" class="btn-action unavailable">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                d="M13.618 21.367A2.37 2.37 0 0 1 12 22a2.37 2.37 0 0 1-1.617-.633C6.412 17.626 1.09 13.447 3.685 7.38C5.09 4.1 8.458 2 12.001 2s6.912 2.1 8.315 5.38c2.592 6.06-2.717 10.259-6.698 13.987Z"
+              />
+            </svg>
+            <span>Extravíos</span>
+          </a>
+
+          <a href="#/criticos" class="btn-action">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g fill="none" stroke="currentColor" stroke-width="1">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m21 3l-8 8.5m-3.554-.415c-2.48.952-4.463.789-6.446.003c.5 6.443 3.504 8.92 7.509 9.912c0 0 3.017-2.134 3.452-7.193c.047-.548.07-.821-.043-1.13c-.114-.309-.338-.53-.785-.973c-.736-.728-1.103-1.092-1.54-1.184c-.437-.09-1.007.128-2.147.565"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M4.5 16.446S7 16.93 9.5 15"
+                />
+                <path
+                  stroke-width="1.5"
+                  d="M8.5 7.25a1.25 1.25 0 1 1-2.5 0a1.25 1.25 0 0 1 2.5 0Z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 4v.1"
+                />
+              </g>
+            </svg>
+            <span>Puntos críticos</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- HEADER -->
+      <header class="header-dashboard">
+        <!-- Botón Panel Izquierdo (para móviles) -->
+        <button
+          id="panelNav"
+          type="button"
+          class="menu-panel"
+          aria-label="Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 5h16M4 12h16M4 19h16"
+            />
+          </svg>
+          <span class="sr-only">Menu hamburguesa para moviles</span>
+        </button>
+        <a href="#/inicio">
+          <svg
+            class="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.0"
+            viewBox="12.54 153.11 349.43 68.78"
+          >
+            <defs>
+              <clipPath id="a">
+                <path d="M12.542969 153.109375h69V222h-69Zm0 0" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#a)">
+              <path
+                fill="#3881d5"
+                d="M46.929688 153.109375H12.542969v3.441406c0 13.59375 7.929687 25.371094 19.40625 30.949219-11.476563 5.578125-19.40625 17.351562-19.40625 30.945312v3.441407h34.386719c18.960937 0 34.390624-15.425781 34.390624-34.386719 0-18.964844-15.425781-34.390625-34.390624-34.390625Zm-27.292969 6.878906h27.296875c14.003906 0 25.597656 10.519531 27.296875 24.070313H46.929688c-14 0-25.597657-10.519532-27.292969-24.070313Zm27.292969 55.023438H19.636719c1.699219-13.554688 13.292969-24.074219 27.296875-24.074219h27.296875c-1.699219 13.554688-13.292969 24.074219-27.300781 24.074219Zm0 0"
+              />
+            </g>
+            <path
+              class=""
+              fill="#010101"
+              d="M125.800879 215.265611c-4.460938 0-8.351562-.8164062-11.671875-2.453125-3.324219-1.644531-5.90625-3.941406-7.75-6.890625-1.84375-2.957031-2.765625-6.382813-2.765625-10.28125v-34.984375h10.984375v34.078125c0 2.09375.460937 3.953125 1.390625 5.578125.925781 1.625 2.234375 2.902344 3.921875 3.828125 1.6875.929687 3.648437 1.390625 5.890625 1.390625 2.269531 0 4.238281-.460938 5.90625-1.390625 1.675781-.925781 2.976562-2.203125 3.90625-3.828125.925781-1.625 1.390625-3.484375 1.390625-5.578125v-34.078125h11.015625v34.984375c0 3.898437-.921875 7.324219-2.765625 10.28125-1.835937 2.949219-4.421875 5.246094-7.765625 6.890625-3.335938 1.6367188-7.230469 2.453125-11.6875 2.453125ZM167.863567 191.593736v22.90625h-10.78125v-39.890625h10.265625l.140625 10.046875h-.890625c1.082031-3.375 2.710937-5.988281 4.890625-7.84375 2.175781-1.851562 4.976562-2.78125 8.40625-2.78125 2.769531 0 5.1875.605469 7.25 1.8125 2.070312 1.199219 3.675781 2.933594 4.8125 5.203125 1.132812 2.261719 1.703125 4.980469 1.703125 8.15625v25.296875h-10.765625v-23.375c0-2.53125-.640625-4.5-1.921875-5.90625-1.28125-1.414062-3.0625-2.125-5.34375-2.125-1.523437 0-2.867187.335938-4.03125 1-1.167969.667969-2.085937 1.625-2.75 2.875-.65625 1.25-.984375 2.792969-.984375 4.625ZM202.532593 214.499986v-39.890625h10.78125v39.890625Zm5.390625-45.0625c-1.65625 0-3.074219-.539062-4.25-1.625-1.167969-1.082031-1.75-2.40625-1.75-3.96875s.582031-2.882812 1.75-3.96875c1.175781-1.09375 2.59375-1.640625 4.25-1.640625 1.664063 0 3.078125.546875 4.234375 1.640625 1.15625 1.085938 1.734375 2.40625 1.734375 3.96875s-.578125 2.886719-1.734375 3.96875c-1.15625 1.085938-2.570312 1.625-4.234375 1.625ZM238.093016 215.218736c-5.5625 0-9.949219-1.460938-13.15625-4.390625-3.199219-2.925781-4.796875-7.097656-4.796875-12.515625v-3.25h10.90625v3.359375c0 2.554687.625 4.492187 1.875 5.8125 1.257813 1.324219 2.972656 1.984375 5.140625 1.984375 2.132812 0 3.820312-.660156 5.0625-1.984375 1.25-1.320313 1.875-3.257813 1.875-5.8125v-37.765625h10.984375v37.65625c0 5.417969-1.601563 9.589844-4.796875 12.515625-3.1875 2.929687-7.554688 4.390625-13.09375 4.390625ZM260.208549 214.499986l18.53125-53.84375h14.375l18.90625 53.84375h-12.296875l-8.59375-26.015625c-1.03125-3.375-2.085938-7.015625-3.15625-10.921875-1.074219-3.914062-2.214844-8.222656-3.421875-12.921875h2.53125c-1.179687 4.699219-2.277344 9.015625-3.296875 12.953125-1.011719 3.9375-2.023438 7.570312-3.03125 10.890625l-8.40625 26.015625Zm11.59375-12.328125v-8.703125h28.609375v8.703125ZM338.633324 215.265611c-4.792969 0-9.085938-1.09375-12.875-3.28125-3.792969-2.195313-6.78125-5.351563-8.96875-9.46875-2.179688-4.125-3.265625-9.09375-3.265625-14.90625 0-5.820313 1.09375-10.796875 3.28125-14.921875 2.195313-4.132812 5.195313-7.296875 9-9.484375 3.8125-2.195313 8.085937-3.296875 12.828125-3.296875 3.082031 0 5.953125.433594 8.609375 1.296875 2.664063.867187 5.023437 2.132813 7.078125 3.796875 2.050781 1.65625 3.734375 3.679688 5.046875 6.0625 1.3125 2.386719 2.171875 5.101562 2.578125 8.140625h-11.171875c-.261719-1.5-.742187-2.835937-1.4375-4.015625-.699219-1.175781-1.570313-2.175781-2.609375-3-1.03125-.820312-2.210938-1.441406-3.53125-1.859375-1.324219-.425781-2.773438-.640625-4.34375-.640625-2.84375 0-5.335938.714844-7.46875 2.140625-2.125 1.417969-3.765625 3.460937-4.921875 6.125-1.15625 2.65625-1.734375 5.875-1.734375 9.65625 0 3.835937.582031 7.085937 1.75 9.75 1.164062 2.65625 2.804688 4.671875 4.921875 6.046875 2.125 1.375 4.609375 2.0625 7.453125 2.0625 1.539062 0 2.972656-.210938 4.296875-.640625 1.332031-.4375 2.519531-1.054687 3.5625-1.859375 1.050781-.8125 1.925781-1.804688 2.625-2.984375.695313-1.1875 1.191406-2.523437 1.484375-4.015625h11.15625c-.335938 2.625-1.109375 5.09375-2.328125 7.40625s-2.835937 4.367188-4.84375 6.15625c-2.011719 1.792969-4.371094 3.199219-7.078125 4.21875-2.710938 1.007812-5.742188 1.515625-9.09375 1.515625Zm0 0"
+            />
+          </svg>
+          <span class="sr-only">logo</span>
+        </a>
+
+        <!-- Acciones del header -->
+        <nav class="nav-act-dashboard" aria-label="Acciones">
+          <div class="content-toast">
+            <button class="toast-btn" id="toastBtn" aria-label="Notificaciones">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.3"
+                  d="M15.5 18a3.5 3.5 0 1 1-7 0m10.731 0H4.77a1.769 1.769 0 0 1-1.25-3.02l.602-.603A3 3 0 0 0 5 12.256V9.5a7 7 0 0 1 14 0v2.756a3 3 0 0 0 .879 2.121l.603.603a1.77 1.77 0 0 1-1.25 3.02"
+                />
+              </svg>
+            </button>
+            <div class="toast-dropdown" id="toastDropdown">
+              <h2 class="title-toast">Notificaciones</h2>
+              <div class="toast-content">
+                <p class="empty-toast">Aún no tienes notificaciones.</p>
+              </div>
+            </div>
+          </div>
+          <div class="profile-content" id="profileContent">
+            <span class="circle"></span>
+            <div class="user">
+              <span class="username">Nombre</span>
+              <span class="email">Correo electronico</span>
+            </div>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="user-content">
+                <span class="circle-user"></span>
+                <div class="info-user">
+                  <span class="username">Nombre Apellido</span>
+                  <span class="email">Correo electronico</span>
+                </div>
+              </div>
+              <section class="profile-account">
+                <span class="title-user">Cuenta</span>
+                <div class="menu">
+                  <button class="disabled">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      >
+                        <path d="M17 8.5a5 5 0 1 0-10 0a5 5 0 0 0 10 0" />
+                        <path d="M19 20.5a7 7 0 1 0-14 0" />
+                      </g>
+                    </svg>
+                    Perfil
+                  </button>
+                  <button class="disabled">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <g fill="none" stroke="currentColor" stroke-width="1">
+                        <path
+                          stroke-width="1.5"
+                          d="M4.268 18.845c.225 1.67 1.608 2.979 3.292 3.056c1.416.065 2.855.099 4.44.099s3.024-.034 4.44-.1c1.684-.076 3.067-1.385 3.292-3.055c.147-1.09.268-2.207.268-3.345s-.121-2.255-.268-3.345c-.225-1.67-1.608-2.979-3.292-3.056A95 95 0 0 0 12 9c-1.585 0-3.024.034-4.44.1c-1.684.076-3.067 1.385-3.292 3.055C4.12 13.245 4 14.362 4 15.5s.121 2.255.268 3.345Z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          d="M7.5 9V6.5a4.5 4.5 0 0 1 9 0V9"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11.996 15.5h.01"
+                        />
+                      </g>
+                    </svg>
+                    Contraseña y seguridad
+                  </button>
+                  <button class="disabled">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m11.9 22l4.55-12h2.1l4.55 12H21l-1.075-3.05h-4.85L14 22zM4 19l-1.4-1.4l5.05-5.05q-.875-.875-1.588-2T4.75 8h2.1q.5.975 1 1.7t1.2 1.45q.825-.825 1.713-2.313T12.1 6H1V4h7V2h2v2h7v2h-2.9q-.525 1.8-1.575 3.7t-2.075 2.9l2.4 2.45l-.75 2.05l-3.05-3.125zm11.7-1.8h3.6l-1.8-5.1z"
+                      />
+                    </svg>
+                    Idioma
+                  </button>
+                </div>
+              </section>
+              <section class="preferences">
+                <span class="title-user">Preferencias</span>
+                <div class="menu">
+                  <button
+                    class="btn-theme"
+                    id="btnTheme"
+                    aria-label="Alternar modo oscuro o claro"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="currentColor"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <path
+                          stroke-width="1.5"
+                          d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11.996 3h.008m-.008 18h.01m6.353-15.364h.009M5.634 18.364h.01m-.01-12.728h.01m12.714 12.729h.01M20.99 12H21M3 12h.009"
+                        />
+                      </g>
+                    </svg>
+                    <span>Tema</span>
+                  </button>
+                  <button class="disabled">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m12 20.9l4.95-4.95a7 7 0 1 0-9.9 0zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 2a4 4 0 1 1 0-8a4 4 0 0 1 0 8"
+                      />
+                    </svg>
+                    Barrio
+                  </button>
+                </div>
+              </section>
+              <button class="logout" id="logOut" aria-label="Cerrar sesión">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="var(--text-alert)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M14.5 6c-.047-1.093-.185-1.79-.598-2.326a3 3 0 0 0-.554-.554c-.81-.62-1.985-.62-4.335-.62h-.501c-2.834 0-4.251 0-5.132.879c-.88.878-.88 2.293-.88 5.121v7c0 2.828 0 4.243.88 5.121s2.298.879 5.132.879h.5c2.351 0 3.526 0 4.336-.62q.314-.241.554-.554c.413-.536.551-1.233.598-2.326m6-6h-12m9.5 3.5s3.5-2.578 3.5-3.5S18 8.5 18 8.5"
+                  />
+                </svg>
+                Cerrar sesión
+              </button>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              id="arrowSvg"
+              class="arrow"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M18 9s-4.419 6-6 6s-6-6-6-6"
+              />
+            </svg>
+          </div>
+        </nav>
+      </header>
+
+      <!-- BreadCrumb -->
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M10.5 8.75v-2c0-1.644 0-2.466-.454-3.019a2 2 0 0 0-.277-.277C9.216 3 8.394 3 6.75 3s-2.466 0-3.019.454a2 2 0 0 0-.277.277C3 4.284 3 5.106 3 6.75v2c0 1.644 0 2.466.454 3.019q.125.152.277.277c.553.454 1.375.454 3.019.454s2.466 0 3.019-.454q.152-.125.277-.277c.454-.553.454-1.375.454-3.019ZM7.75 15.5h-2c-.698 0-1.047 0-1.33.086a2 2 0 0 0-1.334 1.333C3 17.203 3 17.552 3 18.25s0 1.047.086 1.33a2 2 0 0 0 1.333 1.334C4.703 21 5.052 21 5.75 21h2c.698 0 1.047 0 1.33-.086a2 2 0 0 0 1.334-1.333c.086-.284.086-.633.086-1.331s0-1.047-.086-1.33a2 2 0 0 0-1.333-1.334c-.284-.086-.633-.086-1.331-.086ZM21 17.25v-2c0-1.644 0-2.466-.454-3.019a2 2 0 0 0-.277-.277c-.553-.454-1.375-.454-3.019-.454s-2.466 0-3.019.454a2 2 0 0 0-.277.277c-.454.553-.454 1.375-.454 3.019v2c0 1.644 0 2.466.454 3.019q.125.152.277.277c.553.454 1.375.454 3.019.454s2.466 0 3.019-.454q.152-.125.277-.277C21 19.716 21 18.894 21 17.25ZM18.25 3h-2c-.698 0-1.047 0-1.33.086a2 2 0 0 0-1.334 1.333c-.086.284-.086.633-.086 1.331s0 1.047.086 1.33a2 2 0 0 0 1.333 1.334c.284.086.633.086 1.331.086h2c.698 0 1.047 0 1.33-.086a2 2 0 0 0 1.334-1.333C21 6.797 21 6.448 21 5.75s0-1.047-.086-1.33a2 2 0 0 0-1.333-1.334C19.297 3 18.948 3 18.25 3Z"
+          />
+        </svg>
+        <ol>
+          <li aria-current="page"><a href="#/inicio">Dashboard</a></li>
+          <li aria-current="page"><a href="#/inicio">El Minuto de Dios</a></li>
+          <span id="locateHash">Inicio</span>
+        </ol>
+      </nav>
+
+      <main class="content-main" id="contentMain"></main>
+
+      <div id="modalUnavailable" class="modal-unavailable">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100"
+          height="100"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="#858585"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+          >
+            <path
+              stroke-width="1"
+              d="M21.5 12.686v-1.372c0-1.635 0-2.453-.305-3.188c-.304-.735-.882-1.313-2.038-2.47l-.814-.813c-1.156-1.156-1.734-1.734-2.47-2.039c-.734-.304-1.552-.304-3.187-.304h-1.372c-1.635 0-2.453 0-3.188.304c-.735.305-1.313.883-2.47 2.04l-.813.813C3.687 6.813 3.11 7.39 2.804 8.127C2.5 8.86 2.5 9.678 2.5 11.313v1.372c0 1.635 0 2.453.304 3.188c.305.735.883 1.313 2.04 2.47l.813.813c1.156 1.156 1.734 1.734 2.47 2.038c.734.305 1.552.305 3.187.305h1.372c1.635 0 2.453 0 3.188-.305c.735-.304 1.313-.882 2.47-2.038l.813-.814c1.156-1.156 1.734-1.734 2.038-2.47c.305-.734.305-1.552.305-3.187M12 8v4.5"
+            />
+            <path stroke-width="1.8" d="M12 15.988v.01" />
+          </g>
+        </svg>
+        <h2>Lo sentimos !</h2>
+        <p>
+          Seguimos desarrollando para mejorar esta función.
+          <br />
+          Lamentamos las molestias.
+        </p>
+      </div>
+    </div>
+
+    <script src="/js/dashboard/dashboard.js" defer></script>
+    <script src="/js/dashboard/routes.js" defer></script>
+  </body>
+</html>

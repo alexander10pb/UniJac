@@ -1,0 +1,168 @@
+<div class="main-summary">
+  <!-- Resumen de reportes -->
+  <section class="summary-reports" aria-labelledby="page-title">
+    <header class="content-title">
+      <h1 id="page-title" class="title-neighborhood">El Minuto de Dios</h1>
+    </header>
+
+    <div class="content-cards">
+      <h2 class="title-summary">Resumen de reportes</h2>
+      <div class="cards" role="region" aria-label="Indicadores">
+        <article class="card">
+          <p>Eventos</p>
+          <span class="badge">4</span>
+        </article>
+
+        <article class="card">
+          <p>Daños</p>
+          <span class="badge">6</span>
+        </article>
+
+        <article class="card">
+          <p>Extravíos</p>
+          <span class="badge">2</span>
+        </article>
+
+        <article class="card">
+          <p>Aseo</p>
+          <span class="badge">11</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule" aria-labelledby="horarios">
+    <!-- Recolección de basura -->
+    <div class="content-garbage">
+      <h3 class="title" id="horarios">Horarios importantes</h3>
+      <section class="info-garbage" aria-labelledby="horarios">
+        <section class="header-garbage" aria-labelledby="garbage-title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            >
+              <path
+                stroke-width="1.5"
+                d="M16 2v4M8 2v4m5-2h-2C7.229 4 5.343 4 4.172 5.172S3 8.229 3 12v2c0 3.771 0 5.657 1.172 6.828S7.229 22 11 22h2c3.771 0 5.657 0 6.828-1.172S21 17.771 21 14v-2c0-3.771 0-5.657-1.172-6.828S16.771 4 13 4M3 10h18"
+              />
+              <path
+                stroke-width="2"
+                d="M11.996 14h.008m-.008 4h.008m3.987-4H16m-8 0h.009M8 18h.009"
+              />
+            </g>
+          </svg>
+          Recolección de basura
+        </section>
+
+        <div class="week-garbage">
+          <ul>
+            <li>Lunes</li>
+            <li>Miércoles</li>
+            <li>Viernes</li>
+          </ul>
+          <div class="content-hour">
+            Hora estimada
+            <time datetime="19:00">7:00 PM</time>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Eventos y actividades del barrio -->
+    <div class="content-events">
+      <h3 class="title" id="eventos">Eventos y actividades</h3>
+      <section class="info-events" aria-labelledby="eventos">
+        <article class="card">
+          <span class="circle"></span>
+          <div class="content-event">
+            <h4 class="title-event">Rumba terapia</h4>
+            <p class="partner">Alcaldía de Bogotá</p>
+            <p class="date">
+              <time datetime="2026-03-14T07:00">14/03/2026</time>
+              7:00 AM
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <!-- Noticias y novedades del sector -->
+    <div class="content-news">
+      <h3 class="title" id="noticias">Noticias y novedades</h3>
+      <section class="info-news" aria-labelledby="noticias">
+        <p>No hay novedades recientes.</p>
+      </section>
+    </div>
+  </section>
+
+  <!-- Reportes de la comunidad -->
+  <section class="reports" aria-labelledby="reportes-comunidad">
+    <h2 id="reportes-comunidad">Reportes de la comunidad</h2>
+
+    <form aria-label="Filtros de reportes">
+      <label class="sr-only" for="filtro">Filtrar:</label>
+      <select id="filtro" name="filtro">
+        <option value="30">Últimos 30 días</option>
+        <option value="60">Últimos 60 días</option>
+      </select>
+    </form>
+
+    <article class="card">
+      <div class="header-card">
+        <h3>Poste de luz no está funcionando</h3>
+        <p class="time-card">
+          <time datetime="2026-01-31">Reportado el 31 de enero de 2026</time>
+        </p>
+      </div>
+      <span class="info-card">
+        <p class="user-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path d="M17 8.5a5 5 0 1 0-10 0a5 5 0 0 0 10 0" />
+              <path d="M19 20.5a7 7 0 1 0-14 0" />
+            </g></svg
+          >Vecino anónimo
+        </p>
+        <p class="category-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            >
+              <circle cx="12" cy="12" r="10" stroke-width="1.5" />
+              <path stroke-width="1.5" d="M12 16v-4.5" />
+              <path stroke-width="1.8" d="M12 8.012v-.01" />
+            </g></svg
+          >Daños de infraestructura
+        </p>
+      </span>
+
+      <p>
+        Buenas tardes vecinos, el poste de la manzana X no está alumbrando. Por
+        favor tengan cuidado al pasar por este lugar.
+      </p>
+
+      <a href="#" aria-label="Ver detalles del reporte de poste de luz"
+        >Ver reporte</a
+      >
+    </article>
+  </section>
+</div>
