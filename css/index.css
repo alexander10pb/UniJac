@@ -1263,7 +1263,7 @@ body {
         background: var(--background-tertiary);
         box-shadow: 0 1px 3px 1px #00000054;
         width: 3.2rem;
-        height: 3.3rem;
+        height: 3.2rem;
         svg {
           path {
             stroke: var(--blue);
