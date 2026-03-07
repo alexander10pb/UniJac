@@ -1,4 +1,4 @@
-function initLoginSupabase() {
+export function initLoginSupabase() {
 
   const form = document.querySelector(".form-content form");
   if (!form) return;
