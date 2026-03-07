@@ -1,6 +1,7 @@
-import { initRegister, inputValidator } from './register.js';
-
+import { inputValidator } from './register.js';
 import { initRouter } from './routes.js';
+import { supabaseClient } from './supabase.js'
+
 
 window.location.hash = "#/home";
 
